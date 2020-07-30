@@ -18,11 +18,12 @@ block content
   div.main-wrap
     .first-screen
       .first-screen__inner
-        .first-screen__content#first-screen-slider-js
+        .first-screen__content#first-screen-slider-js(data-parallax="yes")
           .first-screen__item
             .first-screen__item-content
-              .first-screen__image.parallax-window(data-parallax="scroll" data-image-src="./img/ati-bunner01.jpg")
-              .first-screen__txt
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+                data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 0%" data-600="background-position-y: 100%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
                 .first-screen__title Design, Quality<br>Engineering
                 .first-screen__cupt FUTURA WEAR TECHNOLOGY <br> Product range
                 .first-screen__desc In-house engineering and R&amp;D department.<br> Exhaustive quality control of all the products supplied.

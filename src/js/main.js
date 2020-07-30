@@ -224,8 +224,9 @@ $(document).ready(function () {
     }
   });
 
-  $('.parallax-window').parallax();
-  jQuery(window).trigger('resize').trigger('scroll');
+
+    var s = skrollr.init();
+
 });
 
 

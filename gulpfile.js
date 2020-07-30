@@ -91,7 +91,8 @@ gulp.task('js-libs', () => {
       // 'node_modules/jquery-ui-dist/jquery-ui.min.js',
       // 'node_modules/owl.carousel/dist/owl.carousel.js',
       // 'node_modules/parallax-js/dist/parallax.min.js',
-     'node_modules/jquery-parallax.js/parallax.js',
+      // 'node_modules/jquery-parallax.js/parallax.js',
+      'node_modules/skrollr/dist/skrollr.min.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))
