@@ -1,0 +1,89 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Home page";
+  - var pageClass = "";
+  - var pageActive = "homepage";
+block content
+  //
+    .b-lazy.webp-img(data-webp="./img/motivated-bg.webp"
+      data-webp-mobile="./img/motivated-bg-mobile.webp"
+      data-img="./img/motivated-bg.png"
+      data-img-mobile="./img/motivated-bg-mobile.png")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      img(src="./img/logo.png" alt="img")
+
+  div.main-wrap
+    .first-screen
+      .first-screen__inner
+        .first-screen__content#first-screen-slider-js
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.parallax-window(data-parallax="scroll" data-image-src="./img/ati-bunner01.jpg")
+              .first-screen__txt
+                .first-screen__title Design, Quality<br>Engineering
+                .first-screen__cupt FUTURA WEAR TECHNOLOGY <br> Product range
+                .first-screen__desc In-house engineering and R&amp;D department.<br> Exhaustive quality control of all the products supplied.
+    .num-block
+      .num-block__inner
+        .num-block__content
+          .num-block__item
+            .num-block__txt qwe
+            .num-block__num 123
+          .num-block__item
+            .num-block__txt qwe
+            .num-block__num 123
+          .num-block__item
+            .num-block__txt qwe
+            .num-block__num 123
+          .num-block__item
+            .num-block__txt qwe
+            .num-block__num 123
+
+    .products
+      .products__inner
+        .products__list
+          .products__item
+            .products__item-content
+              .products__item-preview.b-lazy.webp-img(data-webp="./img/products01.webp"
+                data-img="./img/products01.jpg")
+                .products__item-title Title
+              .products__item-info
+                .products__item-title Title
+                .products__item-txt Text
+                a(href="#").products__item-btn.info-btn + info
+
+    .info-block
+      .info-block__inner
+        .info-block__title.site-title Title
+        .info-block__content
+          .info-block__column
+            picture
+              source(srcset="./img/products01.webp" type="image/webp")
+              img(src="./img/products01.jpg" alt="img")
+          .info-block__column
+            .info-block__txt.
+              BYG manufactures and distributes spare parts for earthmoving, mining and construction machinery. We produce highly engineered products that exceed OEM’s specifications. ISO 9001 certification ensures high quality products and a reliable service. Range includes 2 brand names: BYG and FUTURA WEAR TECHNOLOGY with over 50.000 part numbers in stock.
+            a(href="#").info-block__item-btn.info-btn + info
+
+    .news-block
+      .news-block__inner
+        .news-block__title.site-title Title
+        .news-block__content
+          .news-block__item
+            a(href="#").news-block__item-content
+              picture
+                source(srcset="./img/products01.webp" type="image/webp")
+                img(src="./img/products01.jpg" alt="img")
+              .news-block__txt
+                .news-block__item-date 08.08.2020
+                .news-block__item-title news title
+                .news-block__item-desc news random text news random text news random text
+
+    .horizontal.b-lazy.webp-img(data-webp="./img/foto_sector3.webp"
+      data-img="./img/foto_sector3.jpg")
+      .horizontal__inner
+        .horizontal__title Higher quality, greater durability and equipment performance
+
