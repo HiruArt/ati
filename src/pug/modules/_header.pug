@@ -4,7 +4,7 @@ header.header
 			a(href="/").header__logo-i
 				picture
 					source(srcset="./img/logo1.webp" type="image/webp")
-					img(src="./img/logo1.png" alt="img" width="250")
+					img(src="./img/logo1.png" alt="img" width="200")
 		.header__nav
 			.nav
 				.nav__list
@@ -29,6 +29,8 @@ header.header
 					.nav__item
 						a(href="#").nav__item-link Контакти
 		.header__right
+			.header__btn
+				a(href="#" data-modal-class="callback").header__btn-i.site-btn Замовити дзвінок
 			.header__phone
 				.header__phone-ico
 					include ../../img/ico/phone-call.svg

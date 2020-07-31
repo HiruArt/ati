@@ -18,73 +18,200 @@ block content
   div.main-wrap
     .first-screen
       .first-screen__inner
-        .first-screen__content#first-screen-slider-js(data-parallax="yes")
+        .first-screen__content#first-screen-slider-js
           .first-screen__item
             .first-screen__item-content
               .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
-                data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 0%" data-600="background-position-y: 100%;")
+                data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
               .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
                 .first-screen__title Design, Quality<br>Engineering
                 .first-screen__cupt FUTURA WEAR TECHNOLOGY <br> Product range
                 .first-screen__desc In-house engineering and R&amp;D department.<br> Exhaustive quality control of all the products supplied.
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+                data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
+                .first-screen__title Design, Quality<br>Engineering 2
+                .first-screen__cupt FUTURA WEAR TECHNOLOGY <br> Product range
+                .first-screen__desc In-house engineering and R&amp;D department.<br> Exhaustive quality control of all the products supplied.
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+                data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
+                .first-screen__title Design, Quality<br>Engineering 3
+                .first-screen__cupt FUTURA WEAR TECHNOLOGY <br> Product range
+                .first-screen__desc In-house engineering and R&amp;D department.<br> Exhaustive quality control of all the products supplied.
+
+    .catalog-preview
+      .catalog-preview__inner.site-container
+        .catalog-preview__title.site-title(data-aos="zoom-in")
+          span Ми пропонуємо
+          | Каталог спецтехніки
+        .catalog-preview__list.custom-row
+          .catalog-preview__item.custom-col
+            //.catalog-preview__item-content(data-0="opacity: 0; transform: scale(0.8);" data-500="opacity: 1; transform: scale(1);")
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Коронки і адаптера
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Спецсталь
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Конструкціональная сталь
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Ковші
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Ремонтні роботи
+                .catalog-preview__txt Короткое описание спецтехники
+
+    .why-we
+      .why-we__inner.site-container
+        .why-we__title.site-title(data-aos="zoom-in")
+          span почему выбирают нас?
+          | Мы профессионалы своего дела
+        .why-we__content
+          .why-we__txt(data-aos="fade-right").
+            Профессиональная, быстрая и удобная система управления сайтом предназначена <br>
+            для создания и поддержки интернет-магазинов, корпоративных и информационных сайтов.
+          .why-we__list.custom-row
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="0")
+                .why-we__item-ico
+                  include ../img/ico/driver.svg
+                .why-we__item-name Квалифицированные <br> сотрудники
+                .why-we__item-txt с большим опытом работы
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="200")
+                .why-we__item-ico
+                  include ../img/ico/excavator.svg
+                .why-we__item-name Проверенная техника
+                .why-we__item-txt со своевременным обслуживанием <br> и не старше 10 лет
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="400")
+                .why-we__item-ico
+                  include ../img/ico/time.svg
+                .why-we__item-name Быстрая доставка
+                .why-we__item-txt техники до вашего объекта. 24 часа в сутки
+
+    .our-services
+      .our-services__inner.site-container
+        .our-services__title.site-title(data-aos="zoom-in")
+          span
+          | Услуги
+        .our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+          .our-services__item.custom-col
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт Ковшей
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+          .our-services__item.custom-col(data-aos="fade-left" data-aos-delay="200")
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт Зубьев
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+          .our-services__item.custom-col(data-aos="fade-left" data-aos-delay="400")
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+
     .num-block
-      .num-block__inner
-        .num-block__content
-          .num-block__item
-            .num-block__txt qwe
-            .num-block__num 123
-          .num-block__item
-            .num-block__txt qwe
-            .num-block__num 123
-          .num-block__item
-            .num-block__txt qwe
-            .num-block__num 123
-          .num-block__item
-            .num-block__txt qwe
-            .num-block__num 123
+      .num-block__left-bg.b-lazy.webp-img(data-webp="./img/dots.webp"
+      data-img="./img/dots.jpg")
+      .num-block__inner.site-container
+        .num-block__left
+          .num-block__title(data-aos="zoom-in")
+            span 10
+            | лет на рынке
+        .num-block__right(data-aos="fade-left" data-aos-delay="200")
+          .num-block__list.custom-row#about-num-count
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/driver.svg
+              .num-block__item-num.plus 100
+              .num-block__item-txt Пример текста
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/excavator.svg
+              .num-block__item-num 500
+              .num-block__item-txt Пример текста
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/time.svg
+              .num-block__item-num.plus 2000
+              .num-block__item-txt Пример текста
 
-    .products
-      .products__inner
-        .products__list
-          .products__item
-            .products__item-content
-              .products__item-preview.b-lazy.webp-img(data-webp="./img/products01.webp"
-                data-img="./img/products01.jpg")
-                .products__item-title Title
-              .products__item-info
-                .products__item-title Title
-                .products__item-txt Text
-                a(href="#").products__item-btn.info-btn + info
+    .horizontal
+      .horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
+      data-img="./img/form-bg.jpg")
+      .horizontal__inner.site-container
+        .horizontal__form.site-form(data-aos="fade-up")
+          form
+            .site-form__title.site-title  Оставьте заявку
+            .site-form__col
+              .site-form__row
+                .site-form__input
+                  input(type="text" name="name" placeholder="Имя")
+              .site-form__row
+                .site-form__input
+                  input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+            .site-form__col
+              .site-form__row
+                .site-form__textarea
+                  textarea(placeholder="Ваше сообщение")
+            .site-form__btn
+              a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+          .site-form__submitted
+            .site-form__submitted-txt  Спасибо! <br> Вскоре мы свяжемся с вами!
 
-    .info-block
-      .info-block__inner
-        .info-block__title.site-title Title
-        .info-block__content
-          .info-block__column
-            picture
-              source(srcset="./img/products01.webp" type="image/webp")
-              img(src="./img/products01.jpg" alt="img")
-          .info-block__column
-            .info-block__txt.
-              BYG manufactures and distributes spare parts for earthmoving, mining and construction machinery. We produce highly engineered products that exceed OEM’s specifications. ISO 9001 certification ensures high quality products and a reliable service. Range includes 2 brand names: BYG and FUTURA WEAR TECHNOLOGY with over 50.000 part numbers in stock.
-            a(href="#").info-block__item-btn.info-btn + info
 
-    .news-block
-      .news-block__inner
-        .news-block__title.site-title Title
-        .news-block__content
-          .news-block__item
-            a(href="#").news-block__item-content
-              picture
-                source(srcset="./img/products01.webp" type="image/webp")
-                img(src="./img/products01.jpg" alt="img")
-              .news-block__txt
-                .news-block__item-date 08.08.2020
-                .news-block__item-title news title
-                .news-block__item-desc news random text news random text news random text
 
-    .horizontal.b-lazy.webp-img(data-webp="./img/foto_sector3.webp"
-      data-img="./img/foto_sector3.jpg")
-      .horizontal__inner
-        .horizontal__title Higher quality, greater durability and equipment performance
 

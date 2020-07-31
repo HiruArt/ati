@@ -8,7 +8,7 @@ footer.footer
             img(src="./img/logo1.png" alt="img" width="200")
       .footer__column
         .footer__column-list
-          .footer__column-name
+          .footer__column-name Про компанію
           a(href="#").footer__column-item Головна
           a(href="#").footer__column-item Послуги
           a(href="#").footer__column-item Вакансії
@@ -16,12 +16,14 @@ footer.footer
           a(href="#").footer__column-item Контакти
       .footer__column
         .footer__column-list
+          .footer__column-name Каталог
           a(href="#").footer__column-item Коронки і адаптера
           a(href="#").footer__column-item Спецсталь
           a(href="#").footer__column-item Конструкціональная сталь
           a(href="#").footer__column-item Ковші
           a(href="#").footer__column-item Ремонтні роботи
       .footer__column
+        .footer__column-name Контакти
         .footer__column-list-phone
           .footer__phone-ico
             include ../../img/ico/phone-call.svg
@@ -37,15 +39,32 @@ footer.footer
             include ../../img/ico/fb.svg
           a(href="#").footer__column-sotial-i
             include ../../img/ico/inst.svg
+  .footer__bottom
+    .footer__copyring.site-container © 2020. Все права защищены
 
 
 
-.popup.free-help
+.popup.callback
   .popup__body
     .popup__inner
       .popup__close
         .popup__close-ico
-      .popup__content.free-help__content
+      .popup__content.callback__content
+        form
+          .site-form__title.site-title  Оставьте заявку
+          .site-form__row
+            .site-form__input
+              input(type="text" name="name" placeholder="Имя")
+          .site-form__row
+            .site-form__input
+              input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+          .site-form__row
+            .site-form__textarea
+              textarea(placeholder="Ваше сообщение")
+          .site-form__btn
+            a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+        .site-form__submitted
+          .site-form__submitted-txt  Спасибо! <br> Вскоре мы свяжемся с вами!
 
 
 

@@ -59,7 +59,7 @@ $(document).ready(function () {
   }
   $(document).scroll(function () {
     var top = $(document).scrollTop();
-    if (top < 1) {
+    if (top < 150) {
       $(".header").removeClass('scroll');
     } else {
       $(".header").addClass('scroll');
@@ -211,6 +211,10 @@ $(document).ready(function () {
 
     if($(this).closest('form').find('.error-field').length == 0 && $(this).closest('form').find('.correct').length > 0){
       $(this).closest('.site-form').addClass('submitted');
+      setTimeout(function () {
+        $('.site-form').removeClass('submitted');
+        $('.site-form').find('.correct').removeClass('correct');
+      },5000);
     }
   });
 
@@ -225,7 +229,63 @@ $(document).ready(function () {
   });
 
 
-    var s = skrollr.init();
+  if($(window).width() > 992) {
+    var s = skrollr.init({
+      forceHeight: false,
+    });
+  }
+
+  $('#first-screen-slider-js').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  });
+  $('#first-screen-slider-js').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    setTimeout(function(){
+      bLazy.revalidate();
+    }, 300);
+  });
+
+  AOS.init({
+    disable: 'mobile',
+    duration: 500
+  });
+
+  var numCounFlag = true;
+  var formBgFlag = true;
+  $(window).scroll(function(){
+    var winScrollTop = $(this).scrollTop();
+    var scrollToElem = $('#about-num-count').offset().top;
+    // console.log(winScrollTop, scrollToElem );
+    // console.log(winScrollTop > scrollToElem + 500 && $('#about-num-count').length > 0 && numCounFlag);
+    if(winScrollTop > scrollToElem - 700 && $('#about-num-count').length > 0 && numCounFlag){
+      // console.log(numCounFlag);
+      $('.num-block__item-num').each(function () {
+        var $this = $(this);
+        jQuery({Counter: 0}).animate({Counter: $this.text()}, {
+          duration: 1000,
+          easing: 'swing',
+          step: function () {
+            $this.text(Math.ceil(this.Counter));
+          }
+        });
+      });
+      numCounFlag = false;
+    }
+
+
+    var formBg = $('.horizontal__bg').offset().top;
+    if(winScrollTop > formBg - 400 && $('#about-num-count').length > 0 && formBgFlag) {
+      $('.horizontal__bg').addClass('show');
+      setTimeout(function(){
+        bLazy.revalidate();
+      }, 100);
+    }
+  });
 
 });
 
