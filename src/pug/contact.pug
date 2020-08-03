@@ -1,0 +1,76 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Home page";
+  - var pageClass = "";
+  - var pageActive = "homepage";
+block content
+  //
+    .b-lazy.webp-img(data-webp="./img/motivated-bg.webp"
+      data-webp-mobile="./img/motivated-bg-mobile.webp"
+      data-img="./img/motivated-bg.png"
+      data-img-mobile="./img/motivated-bg-mobile.png")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      img(src="./img/logo.png" alt="img")
+
+  div.main-wrap
+    .top-breadcrumbs.b-lazy.webp-img(data-webp="./img/byg-contacto-1.webp"
+    data-img="./img/byg-contacto-1.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+      .top-breadcrumbs__inner
+        .top-breadcrumbs__title Contact
+        .top-breadcrumbs__path
+          a(href='/') Home
+          span >
+          span Contact
+
+    .map
+      iframe(width='600', height='450', frameborder='0', style='border:0;', allowfullscreen='', aria-hidden='false', tabindex='0' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.8406607627467!2d28.702587015724397!3d50.25756017944918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472c635bc8077a9f%3A0x611439976084ea14!2z0YPQuy4g0JLQuNGC0YDRg9C60LAsIDksINCW0LjRgtC-0LzQuNGALCDQltC40YLQvtC80LjRgNGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCAxMDAwMQ!5e0!3m2!1sru!2sua!4v1596461568830!5m2!1sru!2sua')
+
+    .contact
+      .contact__inner.site-container
+        .contact__text
+          .contact__left
+            picture
+              source(srcset="./img/BYG_contacto_horario_oficinas_clarito.webp" type="image/webp")
+              img(src="./img/BYG_contacto_horario_oficinas_clarito.jpg" alt="img")
+          .contact__right
+            .contact__title Жтомир
+            .contact__name Номер 1
+            a(href="tel:+380675484200").contact__num +38 (067) 54 84 200
+            .contact__name Номер 2
+            a(href="tel:+380412395932").contact__num +38 (0412) 39 59 32
+            .contact__name Номер 3
+            a(href="tel:+380412395822").contact__num +38 (0412) 39 58 22
+            .contact__name Почта
+            a(href="mailto:123@gmail.com").contact__num 123@gmail.com
+            br
+            .contact__name Address
+            .contact__num El Pla 45, Polígono Industrial El Pla 08750 Molins de Rei, Barcelona, SPAIN
+
+
+
+
+
+    .horizontal
+      .horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
+      data-img="./img/form-bg.jpg")
+      .horizontal__inner.site-container
+        .horizontal__form.site-form(data-aos="fade-up")
+          form
+            .site-form__title.site-title  Оставьте заявку
+            .site-form__col
+              .site-form__row
+                .site-form__input
+                  input(type="text" name="name" placeholder="Имя")
+              .site-form__row
+                .site-form__input
+                  input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+            .site-form__col
+              .site-form__row
+                .site-form__textarea
+                  textarea(placeholder="Ваше сообщение")
+            .site-form__btn
+              a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+
