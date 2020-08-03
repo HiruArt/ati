@@ -249,13 +249,40 @@ $(document).ready(function () {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
   });
   $('#first-screen-slider-js').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     setTimeout(function(){
       bLazy.revalidate();
     }, 300);
   });
+
+  if($(window).width() < 992) {
+
+    $('.why-we__list').slick({
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      adaptiveHeight: true,
+    });
+
+    $('.our-services__content').slick({
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      adaptiveHeight: true,
+    });
+
+    $('.our-services__content').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      setTimeout(function(){
+        bLazy.revalidate();
+      }, 300);
+    });
+  }
 
   AOS.init({
     disable: 'mobile',
