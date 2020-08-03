@@ -259,6 +259,7 @@ input{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
   }
 
   &__col{
@@ -290,6 +291,7 @@ input{
       border-style: solid;
       line-height: 51px;
       background: rgba(255, 255, 255,.65);
+      border-radius: .3em;
 
       @include for-992{
         font-size: 16px;
@@ -311,6 +313,7 @@ input{
       background: rgba(255, 255, 255,.65);
       resize: none;
       height: 140px;
+      border-radius: .3em;
 
       @include for-992{
         font-size: 16px;
@@ -397,7 +400,7 @@ input{
 
 .page__content{
   transition: .3s all;
-  margin-top: 151px;
+  margin-top: 149px;
 
   @include for-1600{
     margin-top: 99px;
@@ -2165,6 +2168,19 @@ input{
     }
   }
 
+}
+
+.txt-block{
+  position: relative;
+
+  &__inner{
+    padding-top: 50px;
+  }
+
+  p{
+    line-height: 24px;
+    text-align: justify;
+  }
 }
 
 .popup{
