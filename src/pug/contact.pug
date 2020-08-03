@@ -25,7 +25,7 @@ block content
           span >
           span Contact
 
-    .map
+    .map.site-container
       iframe(width='600', height='450', frameborder='0', style='border:0;', allowfullscreen='', aria-hidden='false', tabindex='0' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550.8406607627467!2d28.702587015724397!3d50.25756017944918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472c635bc8077a9f%3A0x611439976084ea14!2z0YPQuy4g0JLQuNGC0YDRg9C60LAsIDksINCW0LjRgtC-0LzQuNGALCDQltC40YLQvtC80LjRgNGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCAxMDAwMQ!5e0!3m2!1sru!2sua!4v1596461568830!5m2!1sru!2sua')
 
     .contact
@@ -37,17 +37,19 @@ block content
               img(src="./img/BYG_contacto_horario_oficinas_clarito.jpg" alt="img")
           .contact__right
             .contact__title Жтомир
-            .contact__name Номер 1
-            a(href="tel:+380675484200").contact__num +38 (067) 54 84 200
-            .contact__name Номер 2
-            a(href="tel:+380412395932").contact__num +38 (0412) 39 59 32
-            .contact__name Номер 3
-            a(href="tel:+380412395822").contact__num +38 (0412) 39 58 22
-            .contact__name Почта
-            a(href="mailto:123@gmail.com").contact__num 123@gmail.com
-            br
-            .contact__name Address
-            .contact__num El Pla 45, Polígono Industrial El Pla 08750 Molins de Rei, Barcelona, SPAIN
+            .contact__numbers
+              include ../img/ico/phone-call.svg
+              .contact__name Номер 1
+              a(href="tel:+380675484200").contact__num +38 (067) 54 84 200
+              .contact__name Номер 2
+              a(href="tel:+380412395932").contact__num +38 (0412) 39 59 32
+              .contact__name Номер 3
+              a(href="tel:+380412395822").contact__num +38 (0412) 39 58 22
+              .contact__name Почта
+              a(href="mailto:123@gmail.com").contact__num 123@gmail.com
+              br
+              .contact__name Address
+              .contact__num El Pla 45, Polígono Industrial El Pla 08750 Molins de Rei, Barcelona, SPAIN
 
 
 
