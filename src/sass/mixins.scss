@@ -44,11 +44,22 @@
   @media (min-width: 1121px) { @content; }
 }
 
+@mixin from-1100-for-1300 {
+  @media (min-width: 1121px) and (max-width: 1320px) { @content; }
+}
+
 @mixin for-1200 {
   @media (max-width: 1220px) { @content; }
 }
 @mixin from-1200 {
   @media (min-width: 1221px) { @content; }
+}
+
+@mixin for-1300 {
+  @media (max-width: 1320px) { @content; }
+}
+@mixin from-1300 {
+  @media (min-width: 1321px) { @content; }
 }
 
 @mixin for-1400 {
@@ -59,10 +70,10 @@
 }
 
 @mixin for-1600 {
-  @media (max-width: 1600px) { @content; }
+  @media (max-width: 1610px) { @content; }
 }
 @mixin from-1600 {
-  @media (min-width: 1601px) { @content; }
+  @media (min-width: 1611px) { @content; }
 }
 
 @mixin for-1800 {

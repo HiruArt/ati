@@ -5,32 +5,52 @@ header.header
 				picture
 					source(srcset="./img/logo1.webp" type="image/webp")
 					img(src="./img/logo1.png" alt="img" width="200")
-		.header__nav
-			.nav
-				.nav__list
-					.nav__item
-						a(href="#").nav__item-link Головна
-					.nav__item.parent
-						a(href="#").nav__item-link Каталог запчастин
-						.nav__item-arrow
-							include ../../img/ico/arrow-ico.svg
-						.nav__subtitle
-							a(href="#").nav__subtitle-link Коронки і адаптера
-							a(href="#").nav__subtitle-link Спецсталь
-							a(href="#").nav__subtitle-link Конструкціональная сталь
-							a(href="#").nav__subtitle-link Ковші
-							a(href="#").nav__subtitle-link Ремонтні роботи
-					.nav__item
-						a(href="#").nav__item-link Послуги
-					.nav__item
-						a(href="#").nav__item-link Вакансії
-					.nav__item
-						a(href="#").nav__item-link Партнери
-					.nav__item
-						a(href="#").nav__item-link Контакти
-		.header__right
-			.header__btn
-				a(href="#" data-modal-class="callback").header__btn-i.site-btn Замовити дзвінок
+		.header__content
+			.header__nav
+				.nav
+					.nav__list
+						.nav__item
+							a(href="#").nav__item-link Головна
+						.nav__item.parent
+							a(href="#").nav__item-link Каталог запчастин
+							.nav__item-arrow
+								include ../../img/ico/arrow-ico.svg
+							.nav__submenu
+								a(href="#").nav__submenu-link Коронки і адаптера
+								a(href="#").nav__submenu-link Спецсталь
+								a(href="#").nav__submenu-link Конструкціональная сталь
+								a(href="#").nav__submenu-link Ковші
+								a(href="#").nav__submenu-link Ремонтні роботи
+						.nav__item
+							a(href="#").nav__item-link Послуги
+						.nav__item
+							a(href="#").nav__item-link Вакансії
+						.nav__item
+							a(href="#").nav__item-link Партнери
+						.nav__item
+							a(href="#").nav__item-link Контакти
+			.header__right
+				.header__address
+					.header__address-ico
+						include ../../img/ico/pin-ico.svg
+					.header__address-i м. Житомир,<br> вул. Вітрука 9в, оф 307
+				.header__btn
+					a(href="#" data-modal-class="callback").header__btn-i.site-btn Замовити дзвінок
+				.header__phone
+					.header__phone-ico
+						include ../../img/ico/phone-call.svg
+					a(href="tel:+380675484200").header__phone-link +38 (067) 54 84 200
+					.header__phone-list
+						a(href="tel:+380675484200").header__phone-link +38 (067) 54 84 200
+						a(href="tel:+380412395932").header__phone-link +38 (0412) 39 59 32
+						a(href="tel:+380412395822").header__phone-link +38 (0412) 39 58 22
+					.header__phone-arrow
+						include ../../img/ico/arrow-ico.svg
+				.header__lang
+					.header__lang-list
+						a(href="#").header__lang-item.active ua
+						a(href="#").header__lang-item ru
+		.header__mobile
 			.header__phone
 				.header__phone-ico
 					include ../../img/ico/phone-call.svg
@@ -41,7 +61,9 @@ header.header
 					a(href="tel:+380412395822").header__phone-link +38 (0412) 39 58 22
 				.header__phone-arrow
 					include ../../img/ico/arrow-ico.svg
-			.header__lang
-				.header__lang-list
-					a(href="#").header__lang-item.active ua
-					a(href="#").header__lang-item ru
+			.header__btn
+				a(href="#" data-modal-class="callback").header__btn-i.site-btn Замовити дзвінок
+			.header__mobile-btn#menu-btn
+				a(href="javascript:void(0);").header__mobile-btn-i
+					include ../../img/ico/burger.svg
+					include ../../img/ico/close.svg

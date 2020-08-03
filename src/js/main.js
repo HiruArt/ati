@@ -41,16 +41,21 @@ $(document).ready(function () {
   });
 
 
-  $('.menu-btn-js').click(function () {
-    $('.header').addClass('open-menu');
-    $('body').addClass('oh');
+  $('#menu-btn').click(function () {
+    $(this).closest('header').toggleClass('menu-open');
+    $('body').toggleClass('oh');
   });
 
-  $('.menu-btn-close-js').click(function () {
-    $('.header').removeClass('open-menu');
-    $('body').removeClass('oh');
+  $(document).on('click', function (e) {
+    if($(e.target).closest('.header.menu-open').length === 0 && $('.header.menu-open').length > 0 && $(e.target).closest('#menu-btn').length === 0) {
+      $('.header').removeClass('menu-open');
+      $('body').removeClass('oh');
+    }
   });
 
+  $('.nav__item-arrow').click(function (e) {
+    $(this).parent().toggleClass('open');
+  });
 
   if($(document).width() < 992){
     $('.nav__triangle').click(function (e) {
@@ -130,7 +135,7 @@ $(document).ready(function () {
     e.preventDefault();
     var dataModalId = $(this).attr('data-modal-class');
     $('.popup.' + dataModalId + '').addClass('open');
-    $('body').addClass('oh');
+    // $('body').addClass('oh');
     setTimeout(function () {
       bLazy.revalidate();
     },500)
@@ -138,14 +143,13 @@ $(document).ready(function () {
 
   $(document).on('click', '.popup__close', function (e) {
     $('.popup ').removeClass('open');
-    $('body').removeClass('oh');
+    // $('body').removeClass('oh');
   });
 
   $(document).on('click', '.popup', function (e) {
-
     if(e.target.classList[0] == "popup") {
       $('.popup ').removeClass('open');
-      $('body').removeClass('oh');
+      // $('body').removeClass('oh');
     }
   });
   /*popups end*/
@@ -210,11 +214,14 @@ $(document).ready(function () {
     });
 
     if($(this).closest('form').find('.error-field').length == 0 && $(this).closest('form').find('.correct').length > 0){
-      $(this).closest('.site-form').addClass('submitted');
-      setTimeout(function () {
-        $('.site-form').removeClass('submitted');
-        $('.site-form').find('.correct').removeClass('correct');
-      },5000);
+      // $(this).closest('.site-form').addClass('submitted');
+      $('.popup').removeClass('open');
+      $('.callback-success').addClass('open');
+      $(this).closest('form').find('.correct').removeClass('correct');
+      // setTimeout(function () {
+      //   $('.site-form').removeClass('submitted');
+      //   $('.site-form').find('.correct').removeClass('correct');
+      // },5000);
     }
   });
 

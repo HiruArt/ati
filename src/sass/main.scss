@@ -7,7 +7,7 @@ $grey: #3d3d3d;
 
 * {
   box-sizing: border-box;
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
@@ -76,7 +76,7 @@ body{
 }
 
 .oh{
-  //overflow: hidden;
+  overflow: hidden;
   //position: fixed;
 }
 
@@ -157,6 +157,14 @@ input{
   text-transform: uppercase;
   transition: .3s all;
 
+  @include for-1600{
+    font-size: 30px;
+  }
+
+  @include for-992{
+    font-size: 24px;
+  }
+
   span{
     font-size: 20px;
     color: $orange;
@@ -164,26 +172,71 @@ input{
     margin: 10px 0;
     text-align: center;
     font-weight: 700;
+
+    @include for-1600{
+      font-size: 18px;
+    }
+
+    @include for-992{
+      font-size: 16px;
+    }
   }
 }
 
 
 .site-btn{
   text-transform: uppercase;
-  background: $orange;
-  transition: .3s all;
-  color: white;
+  background: white;
+  transition: all 0.2s ease-in-out;
+  color: $orange;
   line-height: 38px;
   padding: 0 15px;
   text-align: center;
   font-weight: 700;
   font-size: 16px;
   border: 2px solid $orange;
+  border-radius: 0.3em;
   display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+
+  @include for-1600{
+    font-size: 13px;
+    line-height: 30px;
+  }
 
   &:hover{
-    background: white;
-    color: $orange;
+    background-color: $orange;
+    color: white;
+    //border-bottom: 4px solid darken($orange, 10%);
+
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
   }
 }
 
@@ -282,37 +335,39 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+    //transform: translate(-50%, -50%);
     height: 200px;
     width: 100%;
     max-width: 400px;
     background: white;
-    box-shadow: 0 0 13px -5px black;
+    //box-shadow: 0 0 13px -5px black;
     transition: .3s all;
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
+    //opacity: 0;
+    //visibility: hidden;
+    //z-index: -1;
   }
 
   &.submitted &__submitted{
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
+    //opacity: 1;
+    //visibility: visible;
+    //z-index: 1;
   }
 
   &__btn{
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 0 15px;
+    //padding: 0 15px;
   }
 
 
   &__btn-i{
     line-height: 50px;
+    display: flex;
+    justify-content: center;
   }
 
   .error-field {
@@ -348,6 +403,10 @@ input{
 .page__content{
   transition: .3s all;
   margin-top: 151px;
+
+  @include for-1600{
+    margin-top: 99px;
+  }
 }
 
 .header{
@@ -365,10 +424,18 @@ input{
 
   &.scroll + .page__content{
     margin-top: 101px;
+
+    @include for-1600{
+      margin-top: 79px;
+    }
   }
 
   &.scroll &__inner{
     height: 100px;
+
+    @include for-1600{
+      height: 80px;
+    }
   }
 
   &__inner{
@@ -378,26 +445,148 @@ input{
     padding: 5px 15px;
     border-bottom: 1px solid $orange;
     transition: .3s all;
+
+    @include for-1600{
+      height: 100px;
+    }
+
+    @include for-1100{
+      justify-content: space-between;
+    }
   }
+
 
   &__logo{
     margin-right: 25px;
     display: flex;
     align-items: center;
+
+    @include for-1400{
+      margin-right: 5px;
+    }
   }
 
   &__logo-i{
 
+    img {
+      @include for-1600 {
+        width: 150px;
+      }
+
+      @include for-1300{
+        width: 100px;
+      }
+
+      @include for-350{
+        width: 75px;
+      }
+    }
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include for-1100{
+      position: fixed;
+      left: -100%;
+      top: 0;
+      background: white;
+      height: 100vh;
+      width: 100%;
+      max-width: 255px;
+      flex-direction: column;
+      justify-content: flex-start;
+      z-index: 10;
+      border-right: 1px solid $orange;
+      transition: .3s all;
+      overflow-y: auto;
+      padding-bottom: 30px;
+      box-shadow: 0 0 20px -15px black;
+    }
+  }
+
+  &.menu-open &__content{
+    left: 0;
   }
 
   &__nav{
 
+    @include for-1100{
+      width: 100%;
+      margin-bottom: 25px;
+    }
   }
 
   &__right{
     margin-left: auto;
     display: flex;
     align-items: center;
+
+    @include for-1300{
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 250px;
+      flex: 0 0 250px;
+    }
+
+    @include for-1100{
+      flex-direction: column;
+      flex: auto;
+      max-width: 100%;
+      justify-content: flex-start;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  &__address{
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 1110px) and (max-width: 1500px){
+      display: none;
+    }
+
+    @include for-1100{
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 0 15px;
+    }
+  }
+
+  &__address-ico{
+    display: flex;
+    margin-right: 10px;
+    z-index: 2;
+    position: relative;
+
+    svg{
+      width: 25px;
+      height: 25px;
+
+      @include for-1600{
+        width: 20px;
+        height: 20px;
+      }
+
+      path{
+        fill: $orange;
+      }
+    }
+  }
+
+  &__address-i{
+    font-size: 15px;
+    color: $grey;
+    transition: .3s all;
+    font-weight: 700;
+
+    @include for-1600{
+      font-size: 13px;
+    }
   }
 
   &__phone{
@@ -405,6 +594,40 @@ input{
     align-items: center;
     position: relative;
     padding-right: 30px;
+
+    @include for-1300{
+      width: 75%;
+      max-width: 180px;
+    }
+
+    @include for-1100{
+      width: 100%;
+    }
+  }
+
+  &__content &__phone{
+
+    @include for-1100{
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 0 15px;
+      max-width: 100%;
+
+      & > .header__phone-link,
+      & > .header__phone-arrow{
+        display: none;
+      }
+
+      .header__phone-list{
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        right: 0;
+      }
+    }
   }
 
   &__phone-arrow{
@@ -417,6 +640,7 @@ input{
     align-items: center;
     cursor: pointer;
     padding-bottom: 2px;
+    z-index: 2;
 
     svg{
       width: 12px;
@@ -450,10 +674,17 @@ input{
 
   &__phone-ico{
     margin-right: 10px;
+    z-index: 2;
+    position: relative;
 
     svg{
       width: 25px;
       height: 25px;
+
+      @include for-1600{
+        width: 20px;
+        height: 20px;
+      }
 
       path{
         fill: $orange;
@@ -462,12 +693,24 @@ input{
   }
 
   &__phone-link{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     font-size: 15px;
     color: $grey;
     transition: .3s all;
     font-weight: 700;
+
+    @include for-1600{
+      font-size: 13px;
+    }
+
+    @include for-1300{
+
+      &:not(.header__phone-link:first-child){
+        border-left: 1px solid $orange;
+        border-right: 1px solid $orange;
+      }
+    }
 
     &:hover{
       color: $orange;
@@ -484,9 +727,21 @@ input{
     z-index: -1;
     transition: .3s all;
     background: white;
+
+    @include from-1100-for-1300{
+      top: 0;
+      transform: none;
+
+      border-bottom: 1px solid $orange;
+      left: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: fit-content;
+    }
+
   }
 
-  &__phone.open   &__phone-list{
+  &__phone.open  &__phone-list{
     opacity: 1;
     visibility: visible;
     z-index: 1;
@@ -494,11 +749,33 @@ input{
 
   &__lang{
     padding-left: 25px;
+
+    @include for-1600{
+      padding-left: 5px;
+    }
+
+    @include for-1300{
+      width: 25%;
+      max-width: 55px;
+    }
+
+    @include for-1100{
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 0 15px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__lang-list{
     display: flex;
     margin: 0 -8px;
+
+    @include for-1600{
+      margin: 0 -5px;
+    }
   }
 
   &__lang-item{
@@ -507,6 +784,12 @@ input{
     text-transform: uppercase;
     transition: .3s all;
     font-weight: 700;
+
+    @include for-1600{
+      font-size: 13px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
 
     &:hover{
       color: $orange;
@@ -519,6 +802,97 @@ input{
 
   &__btn{
     padding: 0 15px;
+
+    @include for-1300{
+      order: 1;
+      display: flex;
+      width: 100%;
+      max-width: 235px;
+      justify-content: flex-end;
+      padding: 0;
+    }
+  }
+
+  &__btn-i{
+
+    @include for-1800{
+      font-size: 13px;
+    }
+
+    @include for-1300{
+      width: 100%;
+    }
+  }
+
+  &__mobile{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    @include from-1100{
+      display: none;
+    }
+  }
+
+  &__mobile &__btn,
+  &__mobile &__phone{
+    order: initial;
+    width: auto;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  &__mobile &__phone-link{
+
+    @include for-420{
+      font-size: 10px;
+    }
+  }
+
+  &__mobile &__btn{
+    
+    @media (max-width: 550px){
+      display: none;
+    }
+  }
+
+  &__mobile-btn{
+    display: flex;
+    align-items: center;
+  }
+
+  &__mobile-btn-i{
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $orange;
+    border-radius: 30px;
+
+    svg path{
+      fill: white;
+    }
+
+    svg{
+      transition: .3s all;
+      width: 16px;
+    }
+
+    svg:last-child{
+      display: none;
+    }
+  }
+
+  &.menu-open &__mobile-btn-i{
+    svg:first-child{
+      display: none;
+    }
+
+    svg:last-child{
+      display: block;
+    }
   }
 }
 
@@ -528,14 +902,29 @@ input{
   height: 100%;
   padding: 0 15px;
 
+  @include for-1100{
+    padding: 0;
+  }
+
   &__list{
     display: flex;
     margin: 0 -15px;
+
+    @include for-1100{
+      width: 100%;
+      flex-direction: column;
+      margin: 0;
+    }
   }
 
   &__item{
     position: relative;
     display: flex;
+
+    @include for-1100{
+      display: flex;
+      flex-direction: column;
+    }
 
     &:after{
       content: '';
@@ -546,6 +935,10 @@ input{
       width: 2px;
       background: $orange;
       z-index: 3;
+
+      @include for-1100{
+        display: none;
+      }
     }
 
     &:last-child{
@@ -568,6 +961,14 @@ input{
     position: relative;
     z-index: 3;
 
+    @include for-1800{
+      font-size: 13px;
+    }
+
+    @include for-1100{
+      line-height: 40px;
+    }
+
     &:before{
       content: '';
       position: absolute;
@@ -578,6 +979,10 @@ input{
       transform: translateX(-50%);
       background: $orange;
       transition: .3s all;
+
+      @include for-1100{
+        display: none;
+      }
     }
   }
 
@@ -591,6 +996,11 @@ input{
 
   .parent &__item-link{
     padding-right: 30px;
+
+    @include for-1100{
+      padding-right: 15px;
+      width: calc(100% - 40px);
+    }
   }
 
   &__item-arrow{
@@ -602,10 +1012,29 @@ input{
     padding-bottom: 2px;
     z-index: 3;
 
+    @include for-1600{
+      padding-bottom: 0;
+    }
+
+    @include for-1100{
+      height: 40px;
+      width: 40px;
+      right: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     svg{
       transition: .3s all;
       width: 11px;
       height: 7px;
+
+      @include for-1600{
+        width: 9px;
+      }
+
       path{
         fill: $grey;
         transition: .3s all;
@@ -613,6 +1042,7 @@ input{
     }
   }
 
+  .parent.open  &__item-arrow,
   .parent:hover  &__item-arrow{
 
     svg {
@@ -624,7 +1054,7 @@ input{
     }
   }
 
-  &__subtitle{
+  &__submenu{
     position: absolute;
     //left: 0;
     top: 0;
@@ -643,9 +1073,22 @@ input{
     opacity: 0;
     z-index: -1;
     left: -50%;
-  }
 
-  .parent:hover  &__subtitle{
+    @include for-1100{
+      opacity: 1;
+      z-index: 1;
+      visibility: visible;
+      left: 0;
+      position: relative;
+      transform: none;
+      width: 100%;
+      box-shadow: none;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+  .parent:hover  &__submenu{
     //max-height: 500px;
     z-index: 2;
     visibility: visible;
@@ -653,7 +1096,13 @@ input{
     left: 0;
   }
 
-  &__subtitle-link{
+  .parent.open  &__submenu{
+    @include for-1100{
+      max-height: 500px;
+    }
+  }
+
+  &__submenu-link{
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -665,9 +1114,26 @@ input{
     margin-bottom: 15px;
     position: relative;
 
+    @include for-1800{
+      font-size: 12px;
+    }
+    @include for-1100{
+      margin-bottom: 0;
+      line-height: 40px;
+      padding-left: 30px;
+    }
+
     &:first-child{
       //padding-top: 35px;
       padding-top: 60px;
+
+      @include for-1600{
+        padding-top: 40px;
+      }
+
+      @include for-1100{
+        padding-top: 0;
+      }
     }
 
     &:hover{
@@ -679,6 +1145,7 @@ input{
 .first-screen{
   overflow: hidden;
   position: relative;
+
   &__inner{
 
   }
@@ -696,6 +1163,14 @@ input{
     display: flex;
     height: calc(100vh - 151px);
     //height: calc(100vh - 101px);
+
+    @include for-1600{
+      height: calc(100vh - 101px);
+    }
+
+    @include for-992{
+      height: 400px;
+    }
   }
 
   &__image{
@@ -708,18 +1183,32 @@ input{
     width: 100%;
     //height: 100%;
     height: calc(100vh - 101px);
+
+    @include for-1600{
+      height: calc(100vh - 80px);
+    }
+
+    @include for-992{
+      display: none;
+    }
   }
 
   &__txt{
     width: 100%;
     margin-left: auto;
     display: flex;
-    justify-content: flex-end;
+    //justify-content: flex-end;
+    justify-content: center;
     height: 100%;
     flex-direction: column;
     padding: 40px;
     position: relative;
     z-index: 2;
+
+    @include for-992{
+      padding: 15px;
+      margin-left: 0;
+    }
   }
 
   &__title{
@@ -729,6 +1218,16 @@ input{
     font-weight: 900;
     margin-bottom: 40px;
     text-align: right;
+
+    @include for-1600{
+      font-size: 40px;
+      line-height: 44px;
+      margin-bottom: 20px;
+    }
+
+    @include for-992{
+      text-align: center;
+    }
   }
 
   &__cupt{
@@ -738,12 +1237,39 @@ input{
     font-weight: 900;
     margin-bottom: 30px;
     text-align: right;
+
+    @include for-1600{
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 15px;
+    }
+
+    @include for-992{
+      text-align: center;
+    }
   }
 
   &__desc{
     color: #000000;
     text-align: right;
+
+    @include for-992{
+      text-align: center;
+    }
   }
+
+  //&__mobile-img{
+  //  display: flex;
+  //  width: 100%;
+  //  justify-content: center;
+  //
+  //  img{
+  //    width: 100%;
+  //  }
+  //  @include from-992{
+  //    display: none;
+  //  }
+  //}
 
 }
 
@@ -778,6 +1304,10 @@ input{
   &__item{
     width: 33.33333%;
     margin-bottom: 30px;
+
+    @include for-1200{
+      width: 50%;
+    }
   }
 
   &__item-content{
@@ -791,6 +1321,10 @@ input{
     &:hover{
       box-shadow: 0 0 30px 0px rgba(0,0,0,.2);
     }
+
+    @include for-992{
+      position: relative;
+    }
   }
 
   &__img{
@@ -801,6 +1335,16 @@ input{
     height: 250px;
     padding: 15px;
     flex: 250px 0 0;
+
+    @include for-992{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .3;
+      padding: 0;
+    }
 
     picture{
       width: 100%;
@@ -824,6 +1368,12 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    @include for-992{
+      padding: 60px 15px 15px;
+    }
   }
 
   &__name{
@@ -838,6 +1388,10 @@ input{
     padding-right: 40px;
     min-height: 40px;
 
+    @include for-1200{
+      margin-bottom: 0;
+    }
+
     &:after{
       content: '';
       position: absolute;
@@ -847,10 +1401,22 @@ input{
       width: 40px;
       height: 40px;
       background: url("../img/ico/down-arrow.svg");
+      transition: .3s all;
+
+      @include for-992{
+        top: -45px;
+      }
     }
 
     &:hover{
       color: $orange;
+    }
+  }
+
+  &__item-content:hover &__name {
+
+    &:after{
+      transform: rotate(-90deg) translateY(5px) scale(.9);
     }
   }
 
@@ -889,6 +1455,7 @@ input{
 
   &__item{
     width: 33.33333%;
+    display: flex;
   }
 
   &__item-content{
@@ -901,6 +1468,9 @@ input{
     border-bottom: 2px solid $orange;
     position: relative;
     overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
 
     &:before{
       content: '';
@@ -1265,6 +1835,7 @@ input{
     height: 100%;
     background-repeat: no-repeat;
     background-position: right center;
+    background-size: contain;
     transition: .5s all;
 
     right: -100%;
