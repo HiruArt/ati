@@ -1,0 +1,218 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Catalog main page";
+  - var pageClass = "";
+  - var pageActive = "catalogmain";
+block content
+  //
+    .b-lazy.webp-img(data-webp="./img/motivated-bg.webp"
+      data-webp-mobile="./img/motivated-bg-mobile.webp"
+      data-img="./img/motivated-bg.png"
+      data-img-mobile="./img/motivated-bg-mobile.png")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      img(src="./img/logo.png" alt="img")
+
+  div.main-wrap
+    .first-screen
+      .first-screen__inner
+        .first-screen__content#first-screen-slider-js
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+              data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
+                .first-screen__title Дизайн, інженерія, <br> якість
+                .first-screen__cupt Внутрішній інженерно-технічний відділ
+                .first-screen__desc Вичерпний контроль якості всієї продукції, що постачається.
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+              data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
+                .first-screen__title Дизайн, інженерія, <br> якість
+                .first-screen__cupt Внутрішній інженерно-технічний відділ
+                .first-screen__desc Вичерпний контроль якості всієї продукції, що постачається.
+          .first-screen__item
+            .first-screen__item-content
+              .first-screen__image.b-lazy.webp-img(data-webp="./img/ati-bunner01.webp"
+              data-img="./img/ati-bunner01.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+              .first-screen__txt(data-0="opacity: 1;" data-500="opacity: 0;")
+                .first-screen__title Дизайн, інженерія, <br> якість
+                .first-screen__cupt Внутрішній інженерно-технічний відділ
+                .first-screen__desc Вичерпний контроль якості всієї продукції, що постачається.
+      //.first-screen__mobile-img
+      //  picture
+      //    source(srcset="./img/foto_sector3.webp" type="image/webp")
+      //    img(src="./img/foto_sector3.jpg" alt="img")
+
+    .catalog-preview
+      .catalog-preview__inner.site-container
+        .catalog-preview__title.site-title(data-aos="zoom-in")
+          span Ми пропонуємо
+          | каталог запчастин
+        .catalog-preview__list.custom-row
+          .catalog-preview__item.custom-col
+            //.catalog-preview__item-content(data-0="opacity: 0; transform: scale(0.8);" data-500="opacity: 1; transform: scale(1);")
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Коронки і адаптера
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Спецсталь
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Конструкціональная сталь
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Ковші
+                .catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col
+            .catalog-preview__item-content(data-aos="fade-up")
+              a(href="#").catalog-preview__img
+                picture
+                  source(srcset="./img/category.webp" type="image/webp")
+                  img(src="./img/category.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="#").catalog-preview__name Ремонтні роботи
+                .catalog-preview__txt Короткое описание спецтехники
+
+    .why-we
+      .why-we__inner.site-container
+        .why-we__title.site-title(data-aos="zoom-in")
+          span почему выбирают нас?
+          | Мы профессионалы своего дела
+        .why-we__content
+          .why-we__txt(data-aos="fade-right").
+            Профессиональная, быстрая и удобная система управления сайтом предназначена <br>
+            для создания и поддержки интернет-магазинов, корпоративных и информационных сайтов.
+          .why-we__list.custom-row
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="0")
+                .why-we__item-ico
+                  include ../img/ico/driver.svg
+                .why-we__item-name Квалифицированные <br> сотрудники
+                .why-we__item-txt с большим опытом работы
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="200")
+                .why-we__item-ico
+                  include ../img/ico/excavator.svg
+                .why-we__item-name Проверенная техника
+                .why-we__item-txt со своевременным обслуживанием <br> и не старше 10 лет
+            .why-we__item.custom-col
+              .why-we__item-content(data-aos="fade-right" data-aos-delay="400")
+                .why-we__item-ico
+                  include ../img/ico/time.svg
+                .why-we__item-name Быстрая доставка
+                .why-we__item-txt техники до вашего объекта. 24 часа в сутки
+
+    .our-services
+      .our-services__inner.site-container
+        .our-services__title.site-title(data-aos="zoom-in")
+          span
+          | Услуги
+        .our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+          .our-services__item.custom-col
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт Ковшей
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+          .our-services__item.custom-col(data-aos="fade-left" data-aos-delay="200")
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт Зубьев
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+          .our-services__item.custom-col(data-aos="fade-left" data-aos-delay="400")
+            .our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+            data-img="./img/services01.jpg")
+              .our-services__name Ремонт
+              .our-services__desk Короткое описание ремонта
+              .our-services__overlay
+                .our-services__overlay-inner
+                  a(href="#").our-services__overlay-title Ремонт
+                  .our-services__overlay-desk Короткое описание ремонта
+                  a(href="#").our-services__overlay-link.site-btn подробнее
+
+    .num-block
+      .num-block__left-bg.b-lazy.webp-img(data-webp="./img/dots.webp"
+      data-img="./img/dots.jpg")
+      .num-block__inner.site-container
+        .num-block__left
+          .num-block__title(data-aos="zoom-in")
+            span 10
+            | лет на рынке
+        .num-block__right(data-aos="fade-left" data-aos-delay="200")
+          .num-block__list.custom-row#about-num-count
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/driver.svg
+              .num-block__item-num.plus 100
+              .num-block__item-txt Пример текста
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/excavator.svg
+              .num-block__item-num 500
+              .num-block__item-txt Пример текста
+            .num-block__item.custom-col
+              .num-block__item-ico
+                include ../img/ico/time.svg
+              .num-block__item-num.plus 2000
+              .num-block__item-txt Пример текста
+
+    .horizontal
+      .horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
+      data-img="./img/form-bg.jpg")
+      .horizontal__inner.site-container
+        .horizontal__form.site-form(data-aos="fade-up")
+          form
+            .site-form__title.site-title  Оставьте заявку
+            .site-form__col
+              .site-form__row
+                .site-form__input
+                  input(type="text" name="name" placeholder="Имя")
+              .site-form__row
+                .site-form__input
+                  input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+            .site-form__col
+              .site-form__row
+                .site-form__textarea
+                  textarea(placeholder="Ваше сообщение")
+            .site-form__btn
+              a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+
+
+
