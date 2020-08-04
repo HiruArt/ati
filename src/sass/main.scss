@@ -1040,8 +1040,8 @@ input{
     }
   }
 
-  .parent.open  &__item-arrow,
-  .parent:hover  &__item-arrow{
+  .parent.open  > &__item-arrow,
+  .parent:hover  > &__item-arrow{
 
     svg {
       transform: rotate(-90deg);
@@ -1060,7 +1060,6 @@ input{
     flex-direction: column;
     padding: 0 15px;
     border-top: 0;
-    overflow: hidden;
     //max-height: 0;
     width: max-content;
     transition: .3s all;
@@ -1074,6 +1073,7 @@ input{
 
     @include from-1100{
       min-width: 250px;
+      //overflow: hidden;
     }
 
     @include for-1100{
@@ -1100,29 +1100,20 @@ input{
 
   .parent.open  &__submenu{
     @include for-1100{
-      max-height: 500px;
+      max-height: 1500px;
     }
   }
-
-  &__submenu-link{
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: .6px;
-    text-transform: uppercase;
-    color: $grey;
-    transition: .3s all;
-    //margin-bottom: 10px;
+  &__submenu-item{
+    //position: relative;
     margin-bottom: 15px;
-    position: relative;
+    display: inline-flex;
+    width: 100%;
 
-    @include for-1800{
-      font-size: 12px;
-    }
     @include for-1100{
       margin-bottom: 0;
-      line-height: 40px;
-      padding-left: 30px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     &:first-child{
@@ -1137,9 +1128,146 @@ input{
         padding-top: 0;
       }
     }
+  }
 
+  &__submenu-link{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: $grey;
+    transition: .3s all;
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+
+    @include for-1800{
+      font-size: 12px;
+    }
+    @include for-1100{
+      margin-bottom: 0;
+      line-height: 16px;
+      padding-left: 23px;
+      min-height: 40px;
+      align-items: center;
+    }
     &:hover{
       color: $orange;
+    }
+  }
+
+  &__submenu-list{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: max-content;
+    transition: .3s all;
+    box-shadow: 0px 4px 5px -6px $grey;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    left: calc(100% - 15px);
+    min-height: 100%;
+
+    padding-top: 60px;
+
+    @include from-1100 {
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @include for-1600{
+      padding-top: 40px;
+    }
+
+    @include for-1100{
+      opacity: 1;
+      z-index: 1;
+      visibility: visible;
+      left: 0;
+      position: relative;
+      transform: none;
+      width: 100%;
+      box-shadow: none;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+  }
+
+  &__submenu-item.parent.open > &__submenu-list{
+    max-height: 1000px;
+  }
+
+  &__submenu-item.parent > &__submenu-link{
+
+    @include for-1100{
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__submenu-item:hover &__submenu-list{
+    z-index: 2;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__submenu-list > &__submenu-link{
+
+    @include from-1100{
+      margin-bottom: 15px;
+    }
+
+    @include for-1100{
+      padding-left: 31px;
+    }
+  }
+
+  &__submenu-item &__item-arrow{
+
+    @include from-1100{
+      display: none;
+    }
+  }
+
+  @include from-1100 {
+    &__submenu-item.parent > &__submenu-link {
+
+      &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url("../img/ico/arrow-ico-orange.svg") center/11px no-repeat;
+        transform: rotate(-90deg);
+        margin-left: auto;
+        position: relative;
+        top: -2px;
+        transition: .3s all;
+        filter: grayscale(1);
+      }
+    }
+
+    &__submenu-item.parent:hover &__submenu-link {
+
+      &:after {
+        filter: grayscale(0);
+      }
     }
   }
 }

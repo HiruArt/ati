@@ -54,7 +54,7 @@ $(document).ready(function () {
   });
 
   $('.nav__item-arrow').click(function (e) {
-    $(this).parent().toggleClass('open');
+    $(this).parent('.parent').toggleClass('open');
   });
 
   if($(document).width() < 992){
