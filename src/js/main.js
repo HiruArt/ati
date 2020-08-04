@@ -284,6 +284,21 @@ $(document).ready(function () {
     });
   }
 
+	$('.block-slider').slick({
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		adaptiveHeight: true,
+	});
+
+	$('.block-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		setTimeout(function(){
+			bLazy.revalidate();
+		}, 300);
+	});
+
   AOS.init({
     disable: 'mobile',
     duration: 500

@@ -1335,7 +1335,10 @@ input{
     position: relative;
     overflow: hidden;
     height: 250px;
-    padding: 15px;
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    margin-top: 15px;
+    //padding: 15px;
     flex: 250px 0 0;
 
     @include for-992{
@@ -1346,6 +1349,7 @@ input{
       height: 100%;
       opacity: .2;
       padding: 0;
+      margin: 0;
     }
 
     picture{
@@ -1435,6 +1439,128 @@ input{
   &__txt{
 
   }
+}
+
+.all-categories{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f2f2f2;
+
+  @include for-992{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    overflow-x: auto;
+  }
+
+  &__inner{
+
+  }
+
+  &__content{
+    display: flex;
+    margin: 0 -15px;
+
+    @include for-992{
+      margin: 0 -5px;
+    }
+  }
+
+  &__item{
+    padding: 0 15px;
+    width: 100%;
+
+    @include for-992{
+      padding: 0 5px;
+    }
+  }
+
+  &__link{
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid $orange;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    transition: all .2s ease-in-out;
+    font-size: 16px;
+    border-radius: .3em;
+    overflow: hidden;
+    font-weight: 700;
+    position: relative;
+
+    @include for-992{
+      font-size: 12px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      line-height: 18px;
+    }
+
+    &:before {
+      content: "";
+      background-color: rgba(255, 255, 255, .5);
+      height: 100%;
+      width: 3em;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -4.5em;
+      transform: skewX(-45deg) translateX(0);
+      transition: none;
+    }
+
+    &:hover{
+      color: white;
+      background-color: $orange;
+
+      &:before {
+        transform: skewX(-45deg) translateX(13.5em);
+        transition: all .5s ease-in-out;
+      }
+    }
+  }
+}
+
+.catalog{
+
+  &__inner{
+
+  }
+
+  &__contnet{
+
+  }
+
+  &__side{
+
+  }
+
+  &__side-inner{
+
+  }
+
+  &__side-menu{
+
+  }
+
+  &__side-menu-head{
+
+  }
+
+  &__side-menu-list{
+
+  }
+
+  &__side-menu-item{
+
+  }
+
+  &__side-menu-link{
+
+  }
+
 
 }
 
@@ -1946,7 +2072,6 @@ input{
 
 }
 
-
 .footer{
   background: #222;
   border-top: 20px solid $orange;
@@ -2183,6 +2308,184 @@ input{
   }
 }
 
+.block-info-txt{
+  background-color: #f2f2f2;
+
+  &__inner{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  p{
+    text-align: center;
+    line-height: 24px;
+  }
+}
+
+.block-info{
+
+  &__inner{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__content{
+
+  }
+
+  &__img{
+    width: 50%;
+
+    @include for-992{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  &__info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    @include for-992{
+      width: 100%;
+    }
+  }
+
+  &__name{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 28px;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    &:before{
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 100px;
+      height: 1px;
+      background-color: $orange;
+      position: absolute;
+    }
+  }
+
+  &__desc{
+    line-height: 24px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    color: $grey;
+
+    &:before{
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 100px;
+      height: 1px;
+      background-color: $grey;
+      position: absolute;
+      opacity: .6;
+    }
+  }
+
+  &__icons{
+    margin-bottom: 15px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  &__btn{
+    display: flex;
+  }
+}
+
+.block-slider{
+  background-color: #f2f2f2;
+
+  &__item{
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  &__item-inner{
+
+  }
+
+  &__item-list{
+    display: flex;
+    margin: 0 -15px;
+
+    @include for-992{
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img{
+    width: 50%;
+    padding: 0 15px;
+    max-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    @include for-992{
+      width: 100%;
+      order: 1;
+      margin-bottom: 29px;
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__txt{
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include for-992{
+      width: 100%;
+      order: 2;
+    }
+
+    h3{
+      margin: 0;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    p{
+      line-height: 24px;
+    }
+  }
+
+  .slick-dots button{
+    background-color: white !important;
+  }
+
+  .slick-dots .slick-active button{
+    background-color: #222 !important;
+  }
+
+}
+
 .popup{
   position: fixed;
   left: 0;
@@ -2337,6 +2640,8 @@ input{
     font-size: 47px;
     line-height: 60px;
     position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
     //display: flex;
     //justify-content: center;
 
@@ -2354,18 +2659,30 @@ input{
   &__path{
     span, a{
       color: white;
+      display: inline-block;
 
       &:hover{
         color: #808080;
       }
 
-      &:nth-child(2){
-        display: inline-block;
-        margin: 0 5px;
+
+    }
+
+    span{
+      margin: 0 5px;
+
+      &:last-child{
+        margin: 0;
       }
     }
   }
 
+  &--mini{
+    background: #222;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .map {
