@@ -315,14 +315,23 @@ $(document).ready(function () {
       }
     }
 
-
-    var formBg = $('.horizontal__bg').offset().top;
-    if(winScrollTop > formBg - 400 && $('.horizontal__bg').length > 0 && formBgFlag) {
-      $('.horizontal__bg').addClass('show');
-      setTimeout(function(){
-        bLazy.revalidate();
-      }, 100);
+    if($('.horizontal__bg').length > 0){
+      var formBg = $('.horizontal__bg').offset().top;
+      if(winScrollTop > formBg - 400 && $('.horizontal__bg').length > 0 && formBgFlag) {
+        $('.horizontal__bg').addClass('show');
+        setTimeout(function(){
+          bLazy.revalidate();
+        }, 100);
+      }
     }
+
+  });
+
+
+  $(".vacancy__btn a").click(function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $(".horizontal").first().offset().top -200
+    }, 1000);
   });
 
 });
