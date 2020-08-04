@@ -349,6 +349,10 @@ $(document).ready(function () {
     }, 1000);
   });
 
+  $(".catalog__side-menu-mobile-burger").click(function(e) {
+    $(this).closest('.catalog__side-menu').find('.catalog__side-menu-list').toggleClass('open');
+  });
+
 });
 
 
