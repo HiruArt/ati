@@ -1,0 +1,127 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Home page";
+  - var pageClass = "";
+  - var pageActive = "homepage";
+block content
+  //
+    .b-lazy.webp-img(data-webp="./img/motivated-bg.webp"
+      data-webp-mobile="./img/motivated-bg-mobile.webp"
+      data-img="./img/motivated-bg.png"
+      data-img-mobile="./img/motivated-bg-mobile.png")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      img(src="./img/logo.png" alt="img")
+
+  div.main-wrap
+    .top-breadcrumbs.b-lazy.webp-img(data-webp="./img/byg-contacto-1.webp"
+    data-img="./img/byg-contacto-1.jpg" data-0="background-position-y: 100%" data-600="background-position-y: 0%;")
+      .top-breadcrumbs__inner
+        .top-breadcrumbs__title Вакансії
+        .top-breadcrumbs__path
+          a(href='/') Головна
+          span >
+          span Вакансії
+
+    .vacancy
+      .vacancy__inner.site-container
+        h1.vacancy__title
+        .catalog-preview__title.site-title(data-aos="zoom-in") Актуальні Вакансії
+          span Ми пропонуємо роботу
+        .vacancy__items
+          .vacancy__item(data-aos="fade-right")
+            .vacancy__item-inner
+              .vacancy__name Продавець
+              .vacancy__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                br
+                br
+                b Обьязаности
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+              .vacancy__btn
+                a(href='#').site-btn Отправить заявку
+          .vacancy__item(data-aos="fade-left")
+            .vacancy__item-inner
+              .vacancy__name Продавець
+              .vacancy__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                br
+                br
+                b Обьязаности
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+              .vacancy__btn
+                a(href='#').site-btn Отправить заявку
+          .vacancy__item(data-aos="fade-right")
+            .vacancy__item-inner
+              .vacancy__name Продавець
+              .vacancy__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                br
+                br
+                b Обьязаности
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+              .vacancy__btn
+                a(href='#').site-btn Отправить заявку
+          .vacancy__item(data-aos="fade-left")
+            .vacancy__item-inner
+              .vacancy__name Продавець
+              .vacancy__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                br
+                br
+                b Обьязаности
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+                ul
+                  li Работать
+              .vacancy__btn
+                a(href='#').site-btn Отправить заявку
+
+
+      .horizontal
+        .horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
+        data-img="./img/form-bg.jpg")
+        .horizontal__inner.site-container
+          .horizontal__form.site-form(data-aos="fade-up")
+            form
+              .site-form__title.site-title  Оставьте заявку
+              .site-form__col
+                .site-form__row
+                  .site-form__input
+                    input(type="text" name="name" placeholder="Имя")
+                .site-form__row
+                  .site-form__input
+                    input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+                .site-form__row
+                  .site-form__input
+                    input(type="text" name="vacancy" placeholder="Название вакансии")
+              //.site-form__col
+              //  .site-form__row
+              //    .site-form__textarea
+              //      textarea(placeholder="Ваше сообщение")
+              .site-form__btn
+                a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+
