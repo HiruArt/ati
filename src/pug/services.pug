@@ -1,0 +1,151 @@
+extends _layout
+
+block vars
+	- var pageTitle = "Catalog list page";
+	- var pageClass = "cataloglist";
+	- var pageActive = "cataloglist";
+block content
+	//
+		.b-lazy.webp-img(data-webp="./img/motivated-bg.webp"
+			data-webp-mobile="./img/motivated-bg-mobile.webp"
+			data-img="./img/motivated-bg.png"
+			data-img-mobile="./img/motivated-bg-mobile.png")
+
+		picture
+			source(srcset="./img/logo.webp" type="image/webp")
+			img(src="./img/logo.png" alt="img")
+
+	div.main-wrap
+		.top-breadcrumbs.top-breadcrumbs--mini
+			.top-breadcrumbs__inner
+				.top-breadcrumbs__title Услуги
+				.top-breadcrumbs__path
+					a(href='/') Головна
+					span >
+					span Услуги
+
+		.all-categories
+			.all-categories__inner.site-container
+				.all-categories__content
+					.all-categories__item
+						a(href="#").all-categories__link Коронки і <br> адаптера
+					.all-categories__item
+						a(href="#").all-categories__link Спецсталь
+					.all-categories__item
+						a(href="#").all-categories__link Конструкціональная <br> сталь
+					.all-categories__item
+						a(href="#").all-categories__link Ковші
+					.all-categories__item
+						a(href="#").all-categories__link Ремонтні <br> роботи
+
+		.catalog
+			.catalog__inner.site-container
+				.catalog__contnet
+					.catalog__side
+						.catalog__side-inner
+							.catalog__side-menu
+								.catalog__side-menu-head Наши услуги
+								.catalog__side-menu-list
+									.catalog__side-menu-item
+										a(href="#").catalog__side-menu-link Услуга
+									.catalog__side-menu-item
+										a(href="#").catalog__side-menu-link Услуга
+									.catalog__side-menu-item
+										a(href="#").catalog__side-menu-link Услуга
+									.catalog__side-menu-item
+										a(href="#").catalog__side-menu-link Услуга
+									.catalog__side-menu-item
+										a(href="#").catalog__side-menu-link Услуга
+
+							.catalog__side-call
+								.catalog__side-call-txt <span>Маєте питання?</span> замовляйте дзвінок і ми все пояснемо!
+								.catalog__side-call-btn
+									a(href="#" data-modal-class="callback").catalog__side-call-btn-i.site-btn Замовити дзвінок
+
+
+					.catalog__main
+						.catalog__list.custom-row
+							.catalog__item.custom-col
+								.our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+									.custom-col
+										.our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+										data-img="./img/services01.jpg")
+											.our-services__name Ремонт Ковшей
+											.our-services__desk Короткое описание ремонта
+											.our-services__overlay
+												.our-services__overlay-inner
+													a(href="#").our-services__overlay-title Ремонт
+													.our-services__overlay-desk Короткое описание ремонта
+													a(href="./service-item.html").our-services__overlay-link.site-btn подробнее
+							.catalog__item.custom-col
+								.our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+									.custom-col
+										.our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+										data-img="./img/services01.jpg")
+											.our-services__name Ремонт Ковшей
+											.our-services__desk Короткое описание ремонта
+											.our-services__overlay
+												.our-services__overlay-inner
+													a(href="#").our-services__overlay-title Ремонт
+													.our-services__overlay-desk Короткое описание ремонта
+													a(href="./service-item.html").our-services__overlay-link.site-btn подробнее
+						.catalog__list.custom-row
+							.catalog__item.custom-col
+								.our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+									.custom-col
+										.our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+										data-img="./img/services01.jpg")
+											.our-services__name Ремонт Ковшей
+											.our-services__desk Короткое описание ремонта
+											.our-services__overlay
+												.our-services__overlay-inner
+													a(href="#").our-services__overlay-title Ремонт
+													.our-services__overlay-desk Короткое описание ремонта
+													a(href="./service-item.html").our-services__overlay-link.site-btn подробнее
+							.catalog__item.custom-col
+								.our-services__content.custom-row(data-aos="fade-left" data-aos-delay="0")
+									.custom-col
+										.our-services__preview.b-lazy.webp-img(data-webp="./img/services01.webp"
+										data-img="./img/services01.jpg")
+											.our-services__name Ремонт Ковшей
+											.our-services__desk Короткое описание ремонта
+											.our-services__overlay
+												.our-services__overlay-inner
+													a(href="#").our-services__overlay-title Ремонт
+													.our-services__overlay-desk Короткое описание ремонта
+													a(href="./service-item.html").our-services__overlay-link.site-btn подробнее
+
+
+						.txt-block(data-aos="fade-up")
+							.txt-block__inner
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Ultrices dui sapien eget mi proin. Mollis nunc sed id semper risus in hendrerit gravida. Egestas congue quisque egestas diam. Arcu ac tortor dignissim convallis aenean. Magna eget est lorem ipsum. Quisque egestas diam in arcu cursus euismod. Eget velit aliquet sagittis id. Massa tincidunt nunc pulvinar sapien. At quis risus sed vulputate odio ut enim blandit. Aenean euismod elementum nisi quis eleifend quam.
+								p Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc. Consectetur adipiscing elit ut aliquam purus sit. Tempus quam pellentesque nec nam. Et tortor consequat id porta. Accumsan lacus vel facilisis volutpat est velit. Eget velit aliquet sagittis id consectetur purus ut. Dignissim convallis aenean et tortor at. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Vestibulum lorem sed risus ultricies. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Facilisis gravida neque convallis a cras semper auctor neque.
+								p At erat pellentesque adipiscing commodo elit at imperdiet dui. Sollicitudin ac orci phasellus egestas tellus. Id aliquet risus feugiat in ante metus dictum at tempor. Adipiscing at in tellus integer feugiat. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Odio aenean sed adipiscing diam donec. In nisl nisi scelerisque eu ultrices vitae auctor. Convallis convallis tellus id interdum velit laoreet id. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Bibendum at varius vel pharetra vel turpis. Habitasse platea dictumst quisque sagittis purus.
+								p Lectus sit amet est placerat. Ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan. Placerat in egestas erat imperdiet. Iaculis nunc sed augue lacus viverra vitae. Turpis tincidunt id aliquet risus feugiat in ante. Nam aliquam sem et tortor consequat id porta nibh. Accumsan tortor posuere ac ut consequat semper viverra nam. Amet purus gravida quis blandit turpis cursus in hac. A diam maecenas sed enim ut sem. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Tortor at auctor urna nunc id cursus metus. Ut enim blandit volutpat maecenas volutpat blandit aliquam. A iaculis at erat pellentesque adipiscing commodo. Tellus mauris a diam maecenas sed enim ut sem viverra.
+								p Mattis molestie a iaculis at. Parturient montes nascetur ridiculus mus mauris. Curabitur gravida arcu ac tortor dignissim convallis aenean. Lobortis elementum nibh tellus molestie nunc. Velit euismod in pellentesque massa placerat duis ultricies. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Massa ultricies mi quis hendrerit dolor magna eget est lorem. Porttitor eget dolor morbi non arcu risus quis varius quam. Varius morbi enim nunc faucibus. Eros donec ac odio tempor orci dapibus ultrices. Sed cras ornare arcu dui vivamus arcu felis. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Euismod elementum nisi quis eleifend. Tempus egestas sed sed risus pretium quam. Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida. Viverra mauris in aliquam sem.
+
+
+
+		.horizontal
+			.horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
+				data-img="./img/form-bg.jpg")
+			.horizontal__inner.site-container
+				.horizontal__form.site-form(data-aos="fade-up")
+					form
+						.site-form__title.site-title  Оставьте заявку
+						.site-form__col
+							.site-form__row
+								.site-form__input
+									input(type="text" name="name" placeholder="Имя")
+							.site-form__row
+								.site-form__input
+									input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+						//.site-form__col
+						//  .site-form__row
+						//    .site-form__textarea
+						//      textarea(placeholder="Ваше сообщение")
+						.site-form__btn
+							a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
+
+
+
