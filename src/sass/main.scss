@@ -2383,6 +2383,12 @@ input{
     position: relative;
     color: $grey;
 
+    ul{
+      list-style: initial;
+      padding-left: 20px;
+      color: #000;
+    }
+
     &:before{
       content: '';
       left: 0;
@@ -2392,6 +2398,20 @@ input{
       background-color: $grey;
       position: absolute;
       opacity: .6;
+    }
+  }
+
+  &__price{
+    font-size: 25px;
+    font-weight: 900;
+    color: #000000;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include for-550{
+      position: static;
+      margin: 5px 0;
     }
   }
 
