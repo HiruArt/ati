@@ -25,8 +25,13 @@ header.header
 							a(href="#").nav__item-link Послуги
 						.nav__item
 							a(href="#").nav__item-link Вакансії
-						.nav__item
-							a(href="#").nav__item-link Партнери
+						.nav__item.parent
+							a(href="#").nav__item-link Компанія
+							.nav__item-arrow
+								include ../../img/ico/arrow-ico.svg
+							.nav__submenu
+								a(href="#").nav__submenu-link Про нас
+								a(href="#").nav__submenu-link Партнери
 						.nav__item
 							a(href="#").nav__item-link Контакти
 			.header__right
