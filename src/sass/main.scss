@@ -3435,3 +3435,46 @@ input{
     }
   }
 }
+
+
+#file{
+  display: none;
+}
+
+label[for="file"]{
+  display: flex;
+  align-items: center;
+
+  svg{
+    width: 31px;
+    margin-right: 11px;
+
+    path{
+      fill: #ffab02;
+    }
+  }
+}
+
+.file-name{
+  margin-left: 10px;
+}
+
+.file-remove{
+  font-size: 14px;
+  color: red;
+  border: 1px solid red;
+  display: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  position: relative;
+  top: -4px;
+  left: 4px;
+
+  &.open{
+    display: flex;
+  }
+}

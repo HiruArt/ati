@@ -374,6 +374,18 @@ $(document).ready(function () {
     $(this).closest('.catalog__side-menu').find('.catalog__side-menu-list').toggleClass('open');
   });
 
+  $('#file').on('change', function () {
+    $('.file-name').html($(this).val().replace(/C:\\fakepath\\/i, ''));
+    $('.file-remove').addClass('open');
+  })
+
+  $('.file-remove').click(function (e) {
+    e.preventDefault();
+    $('#file').val('');
+    $('.file-name').html('');
+    $(this).removeClass('open');
+  });
+
 });
 
 

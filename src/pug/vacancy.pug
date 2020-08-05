@@ -118,10 +118,14 @@ block content
                 .site-form__row
                   .site-form__input
                     input(type="text" name="vacancy" placeholder="Название вакансии")
-              //.site-form__col
-              //  .site-form__row
-              //    .site-form__textarea
-              //      textarea(placeholder="Ваше сообщение")
+                .site-form__row
+                  .site-form__input
+                    label(for="file")
+                      include ../img/ico/fileInput.svg
+                      | Прикрепить файл
+                      span.file-name
+                      a(href="#").file-remove +
+                    input(type="file" name="vacancy" id="file")
               .site-form__btn
                 a(href="#)").site-btn.site-form__btn-i.form-btn Отправить
 
