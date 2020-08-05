@@ -2839,14 +2839,46 @@ input{
 
   &__icons{
     margin-bottom: 15px;
+    display: flex;
+  }
+
+  &__icons-i{
+
+    &.active{
+      filter: grayscale(0);
+    }
 
     img{
-      width: 100%;
+      transition: .3s all;
+      filter: grayscale(1);
+
+      @include for-768{
+        width: 45px;
+      }
+    }
+
+    &:hover{
+      img{
+        filter: grayscale(0);
+      }
     }
   }
 
   &__btn{
     display: flex;
+  }
+
+  &__slider-wrap{
+    display: flex;
+  }
+
+  &__img-small{
+    width: 25%;
+    padding: 0 15px;
+  }
+  &__img-big{
+    padding: 0 15px;
+    width: 75%;
   }
 }
 

@@ -299,6 +299,27 @@ $(document).ready(function () {
 		}, 300);
 	});
 
+  $('.block-info__big-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.block-info__small-slider',
+    infinite: true,
+  });
+  $('.block-info__small-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.block-info__big-slider',
+    dots: false,
+    arrows: false,
+    // centerMode: true,
+    focusOnSelect: true,
+    vertical: true,
+    infinite: true,
+    verticalSwiping: true,
+  });
+
   AOS.init({
     disable: 'mobile',
     duration: 500
