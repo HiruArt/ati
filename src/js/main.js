@@ -386,6 +386,18 @@ $(document).ready(function () {
     $(this).removeClass('open');
   });
 
+  $(document).scroll(function () {
+    var top = $(document).scrollTop();
+    if (top < 150) {
+      $(".site-btn-top").removeClass('show');
+    }
+  });
+
+  $(document).on('click', '.site-btn-top', function (e) {
+    jQuery('html,body').animate({scrollTop: 0},800);
+  });
+
+
 });
 
 

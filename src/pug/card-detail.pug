@@ -102,10 +102,7 @@ block content
                     source(srcset="./img/001.webp" type="image/webp")
                     img(src="./img/001.jpg" alt="img")
           .block-info__info.custom-col
-            .block-info__name Назва товару
-              .block-info__price
-                span Цена
-                | 333 333 грн
+            .block-info__name Повна назва товару
             .block-info__desc
               | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               ul
@@ -116,33 +113,79 @@ block content
                 li емкость
 
             .block-info__icons
-              .block-info__icons-i
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/1.webp" type="image/webp")
                   img(src="./img/ico/1.png" alt="img" width="65")
-              .block-info__icons-i
+                span Текст для прикладу
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/2.webp" type="image/webp")
                   img(src="./img/ico/2.png" alt="img" width="65")
-              .block-info__icons-i
+                span Текст для прикладу
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/3.webp" type="image/webp")
                   img(src="./img/ico/3.png" alt="img" width="65")
-              .block-info__icons-i
+                span Текст для прикладу
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/4.webp" type="image/webp")
                   img(src="./img/ico/4.png" alt="img" width="65")
-              .block-info__icons-i
+                span Текст для прикладу
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/5.webp" type="image/webp")
                   img(src="./img/ico/5.png" alt="img" width="65")
-              .block-info__icons-i
+                span Текст для прикладу
+              a(href="#").block-info__icons-i
                 picture
                   source(srcset="./img/ico/6.webp" type="image/webp")
                   img(src="./img/ico/6.png" alt="img" width="65")
+                span Текст для прикладу
+            .block-info__price
+              span цена
+              | 100 000 грн
             .block-info__btn
               a(href="#" data-modal-class="buy").block-info__btn.site-btn Замовити
 
+    .txt-block(data-aos="fade-up")
+      .txt-block__inner.site-container
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et. Ultrices dui sapien eget mi proin. Mollis nunc sed id semper risus in hendrerit gravida. Egestas congue quisque egestas diam. Arcu ac tortor dignissim convallis aenean. Magna eget est lorem ipsum. Quisque egestas diam in arcu cursus euismod. Eget velit aliquet sagittis id. Massa tincidunt nunc pulvinar sapien. At quis risus sed vulputate odio ut enim blandit. Aenean euismod elementum nisi quis eleifend quam.
+
+
+        table
+          tr
+            th(colspan="2") Приклад заголовка
+            th Приклад заголовка
+            th Номер
+          tr
+            td Прикоад тексту
+            td Прикоад тексту
+            td Прикоад широкого текстового тексту
+            td(style="text-align: center;") 1
+          tr
+            td Прикоад тексту
+            td Прикоад широкого текстового тексту
+            td Прикоад широкого текстового тексту
+            td(style="text-align: center;") 13
+          tr
+            td Прикоад тексту
+            td Прикоад широкого текстового тексту
+            td Прикоад широкого текстового тексту
+            td(style="text-align: center;") 5435
+          tr
+            td Прикоад тексту
+            td Прикоад тексту
+            td Прикоад широкого текстового тексту
+            td(style="text-align: center;") 345
+          tr
+            td(colspan="3") Прикоад широкого текстового тексту
+            td(style="text-align: center;")
+              strong 3453234
+
+
+        p Mattis molestie a iaculis at. Parturient montes nascetur ridiculus mus mauris. Curabitur gravida arcu ac tortor dignissim convallis aenean. Lobortis elementum nibh tellus molestie nunc. Velit euismod in pellentesque massa placerat duis ultricies. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Massa ultricies mi quis hendrerit dolor magna eget est lorem. Porttitor eget dolor morbi non arcu risus quis varius quam. Varius morbi enim nunc faucibus. Eros donec ac odio tempor orci dapibus ultrices. Sed cras ornare arcu dui vivamus arcu felis. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Euismod elementum nisi quis eleifend. Tempus egestas sed sed risus pretium quam. Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida. Viverra mauris in aliquam sem.
     .block-slider(data-aos="fade-left")
       .block-slider__item
         .block-slider__item-inner.site-container
@@ -182,7 +225,9 @@ block content
       .horizontal__inner.site-container
         .horizontal__form.site-form(data-aos="fade-up")
           form
-            .site-form__title.site-title  Оставьте заявку
+            .site-form__title.site-title
+              span залишилися питання?
+              | Напишіть нам!
             .site-form__col
               .site-form__row
                 .site-form__input
