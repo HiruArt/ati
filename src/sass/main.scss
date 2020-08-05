@@ -1625,6 +1625,7 @@ input{
     overflow: hidden;
     font-weight: 700;
     position: relative;
+    text-align: center;
 
     @include for-992{
       font-size: 12px;
@@ -2675,6 +2676,13 @@ input{
 .slick-slider{
   position: relative;
 
+  * {
+
+    &:focus{
+      outline: none!important;
+    }
+  }
+
   .slick-dots{
     position: absolute;
     bottom: 25px;
@@ -2876,9 +2884,56 @@ input{
     width: 25%;
     padding: 0 15px;
   }
+
+  &__small-slider-item{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: .3s all;
+    cursor: pointer;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__img-big{
     padding: 0 15px;
     width: 75%;
+  }
+
+  &__big-slider-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__small-slider{
+
+    .slick-current .block-info__small-slider-item{
+      border-color: $orange;
+      border-radius: .3rem;
+    }
+
+    .slick-slide{
+      transition: .3s all;
+
+      &:hover .block-info__small-slider-item{
+        border-color: $orange;
+        border-radius: .3rem;
+      }
+    }
   }
 }
 
