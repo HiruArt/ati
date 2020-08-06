@@ -101,7 +101,7 @@ $(document).ready(function () {
       $('.webp-img').each(function () {
         var img;
         if($(this).data('img-mobile') !== undefined)
-          img = $(this).data('img-mobile'); else webp = $(this).data('img');
+          img = $(this).data('img-mobile'); else img = $(this).data('img');
         $(this).attr('data-blazy', img);
       });
     }
@@ -318,6 +318,54 @@ $(document).ready(function () {
     vertical: true,
     infinite: true,
     verticalSwiping: true,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          verticalSwiping: false,
+          vertical: false,
+        }
+      }
+    ]
+  });
+
+
+  $('.list-product__slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    dots: true,
+    focusOnSelect: true,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    // centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ]
   });
 
   AOS.init({
@@ -390,12 +438,42 @@ $(document).ready(function () {
     var top = $(document).scrollTop();
     if (top < 150) {
       $(".site-btn-top").removeClass('show');
+    } else {
+      $(".site-btn-top").addClass('show');
     }
   });
 
   $(document).on('click', '.site-btn-top', function (e) {
     jQuery('html,body').animate({scrollTop: 0},800);
   });
+
+
+
+// функция возвращает cookie с именем name, если есть, если нет, то undefined
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+// проверяем, есть ли у нас cookie, с которой мы не показываем окно и если нет, запускаем показ
+  var alertwin = getCookie("alertwin");
+  if (alertwin != "no") {
+    $(document).mouseleave(function(e){
+      if (e.clientY < 10) {
+        $(".exitblock").addClass("open");
+        // записываем cookie на 1 день, с которой мы не показываем окно
+        var date = new Date;
+        date.setDate(date.getDate() + 1);
+        document.cookie = "alertwin=no; path=/; expires=" + date.toUTCString();
+      }
+    });
+    $(document).click(function(e) {
+      if (($(".exitblock").is(':visible')) && (!$(e.target).closest(".exitblock__content").length)) {
+        $(".exitblock").remove();
+      }
+    });
+  }
 
 
 });

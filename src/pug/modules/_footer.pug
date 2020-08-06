@@ -9,7 +9,7 @@ footer.footer
       .footer__column
         .footer__column-list
           .footer__column-name Про компанію
-          a(href="./").footer__column-item Головна
+          a(href="./index1.html").footer__column-item Головна
           a(href="./services.html").footer__column-item Послуги
           a(href="./vacancy.html").footer__column-item Вакансії
           a(href="./about.html").footer__column-item Про нас
@@ -96,6 +96,26 @@ a(href="javascript:void(0);").site-btn-top
       .popup__content.callback__content
         .site-form__submitted
           .site-form__submitted-txt  Спасибо! <br> Вскоре мы свяжемся с вами!
+
+
+.popup.exitblock
+  .popup__body
+    .popup__inner
+      .popup__close
+        .popup__close-ico
+      .popup__content.exitblock__content
+        .exitblock__bg.b-lazy.webp-img(data-webp="./img/popup-form-bg.webp"
+        data-img="./img/popup-form-bg.jpg")
+        .exitblock__title Не знайшли, що шукали?
+        .exitblock__desc Наш менеджер завжди <br> пропонує допомогу!
+        .site-form
+          form
+            .site-form__row
+              .site-form__input
+                input(type="tel" name="phone" inputmode="numeric" placeholder="Телефон").phone
+            .site-form__btn
+              a(href="#)").site-btn.site-form__btn-i.form-btn Надіслати
+
 
 
 

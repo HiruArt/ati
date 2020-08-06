@@ -90,6 +90,18 @@ a{
   }
 }
 
+.table-1100{
+  @include from-1100{
+    display: none!important;
+  }
+}
+
+.desktop-1100{
+  @include for-1100{
+    display: none!important;
+  }
+}
+
 .tablet{
   @media (min-width: 992px) {
     display: none !important;
@@ -396,10 +408,15 @@ input{
     }
   }
 
+  &__title-custom{
+    display: flex;
+    width: 100%;
+  }
+
 }
 
 .page__content{
-  transition: .3s all;
+  transition: .15s all;
   margin-top: 149px;
 
   @include for-1600{
@@ -408,7 +425,7 @@ input{
 }
 
 .header{
-  transition: .3s all;
+  transition: .15s all;
   background: white;
   position: fixed;
   left: 0;
@@ -442,7 +459,7 @@ input{
     //padding: 30px 15px;
     padding: 5px 15px;
     border-bottom: 1px solid $orange;
-    transition: .3s all;
+    transition: .15s all;
 
     @include for-1600{
       height: 100px;
@@ -702,14 +719,6 @@ input{
       font-size: 13px;
     }
 
-    @include for-1300{
-
-      &:not(.header__phone-link:first-child){
-        border-left: 1px solid $orange;
-        border-right: 1px solid $orange;
-      }
-    }
-
     &:hover{
       color: $orange;
     }
@@ -735,6 +744,10 @@ input{
       padding-left: 15px;
       padding-right: 15px;
       width: fit-content;
+    }
+
+    @include for-1100{
+      border: none;
     }
 
   }
@@ -770,6 +783,10 @@ input{
   &__lang-list{
     display: flex;
     margin: 0 -8px;
+    position: relative;
+    @include from-1100{
+      padding-right: 10px;
+    }
 
     @include for-1600{
       margin: 0 -5px;
@@ -796,6 +813,50 @@ input{
     &.active{
       color: $orange;
     }
+  }
+
+  @include from-1100 {
+
+    &__lang-sublang {
+      position: absolute;
+      left: 0;
+      top: 38px;
+      width: 100%;
+      display: flex;
+      transition: .3s all;
+      background: white;
+      border-bottom: 1px solid $orange;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+    }
+
+    &__lang-list:hover &__lang-sublang {
+      z-index: 1;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__lang-arrow{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      svg{
+        width: 12px;
+        height: 12px;
+
+        path{
+          transition: .3s all;
+        }
+      }
+    }
+
+    &__lang-list:hover &__lang-arrow svg path{
+      fill: $orange;
+    }
+
   }
 
   &__btn{
@@ -1300,6 +1361,10 @@ input{
 
     @include for-992{
       height: 400px;
+    }
+
+    @include for-550{
+      height: calc(100vh - 100px);
     }
   }
 
@@ -1966,9 +2031,15 @@ input{
     margin-bottom: 15px;
     text-align: center;
     margin-top: auto;
+    position: relative;
 
     span{
       font-size: 22px;
+    }
+
+    .info-tooltip{
+      top: 3px;
+      margin-left: 5px;
     }
   }
 
@@ -2469,6 +2540,10 @@ input{
       background-position: right bottom;
       width: 100%;
     }
+
+    //@include for-768{
+    //  right: 0 !important;
+    //}
     &.show{
       right: 0;
     }
@@ -2743,6 +2818,15 @@ input{
     text-align: justify;
   }
 
+  &__table{
+
+    @include for-992{
+      width: 100%;
+      overflow-x: auto;
+      position: relative;
+    }
+  }
+
   table {
     border: 1px double $grey;
     border-collapse: collapse;
@@ -2764,6 +2848,13 @@ input{
   &__inner{
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include for-1100{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
   }
 
   p{
@@ -2869,30 +2960,48 @@ input{
       margin-right: 7px;
     }
 
-    @include for-550{
-      position: static;
-      margin: 5px 0;
+    .info-tooltip{
+      position: relative;
+      top: 4px;
+      margin-left: 5px;
     }
   }
 
   &__icons{
-    margin-bottom: 15px;
     display: flex;
+    margin: 0 -15px;
+    margin-bottom: 15px;
+
+    @include for-550{
+      flex-wrap: wrap;
+    }
   }
 
   &__icons-i{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 15px;
+
+    @include for-550{
+      width: 33.33333%;
+      margin-bottom: 15px;
+    }
 
     span{
       font-size: 12px;
       line-height: 14px;
       text-align: center;
+      font-weight: 900;
+      color: #bebebe;
     }
 
     &.active{
       filter: grayscale(0);
+
+      span{
+        color: #222;
+      }
     }
 
     img{
@@ -2917,11 +3026,20 @@ input{
 
   &__slider-wrap{
     display: flex;
+
+    @include for-768{
+      flex-direction: column-reverse;
+    }
   }
 
   &__img-small{
     width: 25%;
     padding: 0 15px;
+
+    @include for-768{
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &__small-slider-item{
@@ -2934,6 +3052,10 @@ input{
     transition: .3s all;
     cursor: pointer;
 
+    @include for-768{
+      height: 60px;
+    }
+
     img{
       width: 100%;
       height: 100%;
@@ -2944,6 +3066,11 @@ input{
   &__img-big{
     padding: 0 15px;
     width: 75%;
+
+    @include for-768{
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &__big-slider-item{
@@ -2958,6 +3085,10 @@ input{
       object-fit: contain;
 
       object-fit: cover;
+    }
+
+    @include for-768{
+      height: 300px;
     }
   }
 
@@ -3058,20 +3189,27 @@ input{
 }
 
 .site-btn-top{
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(90deg, rgba(16,110,170,1) 0%, rgba(51,166,235,1) 100%);
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-
+  display: flex;
   position: fixed;
   bottom: 10%;
-  right: 10%;
+  right: 5%;
   transition: .3s all;
   z-index: -1;
   opacity: 0;
   visibility: hidden;
+  border: 2px solid $orange;
+
+  svg{
+    width: 25px;
+    path{
+      fill: $orange;
+    }
+  }
 
   @include for-992{
     bottom: 5%;
@@ -3082,32 +3220,88 @@ input{
 
 
   &.show{
-    display: flex;
-    z-index: 4;
+    z-index: 5;
     opacity: 1;
     visibility: visible;
   }
 
   &:hover{
+    background: white;
+    box-shadow: 0 0 14px -5px #565656;
+  }
 
-    img{
+}
 
-      transform: scale(0.9) rotate(180deg) translateY(2px);
+.info-tooltip{
+  position: relative;
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  background: url("../img/ico/info.svg") center/contain no-repeat;
 
+
+  &__txt{
+    width: max-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    background: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: .3rem;
+    border: 2px solid $orange;
+    transition: .2s all;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -30px;
+      width: 60px;
+      height: 60px;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -10px;
+      border: 5px solid transparent; border-bottom: 5px solid $orange;
     }
   }
 
 
-  img{
-    transform: rotate(180deg);
-    transition: .2s all;
-
-    @include for-992{
-      width: 30px;
-      height: 30px;
-    }
+  &:hover &__txt {
+    z-index: 3;
+    visibility: visible;
+    opacity: 1;
   }
 }
+
+.list-product{
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__inner{
+    padding: 0 15px;
+  }
+
+  &__slider{
+    padding-bottom: 30px;
+  }
+
+  .catalog__item{
+    width: 100%;
+  }
+
+}
+
 
 .popup{
   position: fixed;
@@ -3229,6 +3423,56 @@ input{
   }
 }
 
+.exitblock{
+
+  .popup__body{
+    margin: 0 auto;
+  }
+
+  &__content{
+    padding: 30px;
+    position: relative;
+  }
+
+  &__bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .2;
+  }
+
+  &__title{
+    margin-bottom: 10px;
+    color: #ffab02;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__desc{
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .site-form{
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+}
+
 
 
 
@@ -3250,6 +3494,10 @@ input{
     height: 240px;
   }
 
+  @include for-550{
+    height: 180px;
+  }
+
   &__inner{
     display: flex;
     align-items: center;
@@ -3265,8 +3513,20 @@ input{
     position: relative;
     text-transform: uppercase;
     font-weight: 700;
+    padding-left: 15px;
+    padding-right: 15px;
     //display: flex;
     //justify-content: center;
+
+    @include for-992{
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+    @include for-550{
+      font-size: 18px;
+      line-height: 24px;
+    }
 
     &:after{
       //position: absolute;
@@ -3280,6 +3540,13 @@ input{
   }
 
   &__path{
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include for-992{
+      text-align: center;
+    }
+
     span, a{
       color: white;
       display: inline-block;
@@ -3313,6 +3580,16 @@ input{
 
   iframe{
     width: 100%;
+    border: 0;
+  }
+}
+
+.contact-page-content{
+  display: flex;
+  flex-direction: column;
+
+  @include for-992{
+    flex-direction: column-reverse;
   }
 }
 
@@ -3523,9 +3800,17 @@ input{
 
     .block-info__img{
       width: 30%;
+
+      @include for-768{
+        width: 100%;
+      }
     }
     .block-info__info{
       width: 70%;
+
+      @include for-768{
+        width: 100%;
+      }
     }
   }
 }
@@ -3538,10 +3823,21 @@ input{
 label[for="file"]{
   display: flex;
   align-items: center;
+  transition: .3s all;
+  cursor: pointer;
+
+  &:hover{
+    color: $orange;
+
+    svg{
+      transform: scale(.9);
+    }
+  }
 
   svg{
     width: 31px;
     margin-right: 11px;
+    transition: .3s all;
 
     path{
       fill: #ffab02;
