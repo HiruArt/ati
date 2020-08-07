@@ -492,7 +492,7 @@ input{
         width: 100px;
       }
 
-      @include for-350{
+      @include for-420{
         width: 75px;
       }
     }
@@ -903,7 +903,7 @@ input{
 
   &__mobile &__phone-link{
 
-    @include for-420{
+    @include for-350{
       font-size: 10px;
     }
   }
@@ -1642,6 +1642,26 @@ input{
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #f2f2f2;
+
+  &--wrap{
+
+    //@include for-768 {
+    //  position: relative;
+    //
+    //  &:after {
+    //    content: '';
+    //    position: absolute;
+    //    width: 30px;
+    //    height: 30px;
+    //    background:  url("../img/ico/rotate.svg") center/contain no-repeat;
+    //    //left: 50%;
+    //    //transform: translateX(-50%);
+    //    right: 5px;
+    //    top: calc(100% + 5px);
+    //    z-index: 10;
+    //  }
+    //}
+  }
 
   @include for-992{
     padding-top: 15px;
@@ -2524,6 +2544,11 @@ input{
   padding-bottom: 80px;
   position: relative;
 
+  @include for-768{
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+
   &__bg{
     position: absolute;
     top: 50%;
@@ -3022,6 +3047,20 @@ input{
 
   &__btn{
     display: flex;
+
+    @include for-550{
+      justify-content: center;
+    }
+  }
+
+  &__btn-i{
+
+    @include for-550{
+      width: 100%;
+      max-width: 250px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
 
   &__slider-wrap{

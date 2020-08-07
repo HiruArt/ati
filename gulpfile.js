@@ -70,7 +70,8 @@ gulp.task('css-libs', () => {
       'node_modules/magnific-popup/dist/magnific-popup.css',
       // 'node_modules/jquery-ui-dist/jquery-ui.min.css',
       // 'node_modules/owl.carousel/dist/assets/owl.carousel.css',
-      'node_modules/aos/dist/aos.css'
+      'node_modules/aos/dist/aos.css',
+      'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'
   ])
     .pipe(gulp.dest('dist/css/libs/'))
     .pipe(concat('libs.css'))
@@ -95,6 +96,7 @@ gulp.task('js-libs', () => {
       // 'node_modules/jquery-parallax.js/parallax.js',
       'node_modules/skrollr/dist/skrollr.min.js',
       'node_modules/aos/dist/aos.js',
+      'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))
