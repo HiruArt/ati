@@ -250,6 +250,7 @@ $(document).ready(function () {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 4000,
+    fade: true,
   });
   $('#first-screen-slider-js').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     setTimeout(function(){
