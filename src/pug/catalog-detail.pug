@@ -36,8 +36,8 @@ block content
         .block-info__content.custom-row
           .block-info__img.custom-col
             picture
-              source(srcset="./img/002.webp" type="image/webp")
-              img(src="./img/002.jpg" alt="img")
+              source(srcset="./img/catalog-detail.webp" type="image/webp")
+              img(src="./img/catalog-detail.jpg" alt="img")
           .block-info__info.custom-col
             .block-info__name Назва розділу
             .block-info__desc.
@@ -213,7 +213,8 @@ block content
                 .catalog__item-btn
                   a(href="./card-detail.html" data-modal-class="callback").catalog__item-btn-i.site-btn Замовити
 
-    .horizontal
+    .horizontal.b-lazy.webp-img(data-webp="./img/v_formu.webp"
+    data-img="./img/v_formu.jpg")
       .horizontal__bg.b-lazy.webp-img(data-webp="./img/form-bg.webp"
       data-img="./img/form-bg.jpg")
       .horizontal__inner.site-container
