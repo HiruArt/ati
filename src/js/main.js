@@ -483,6 +483,10 @@ $(document).ready(function () {
     });
   }
 
+  $('.txt-block__more').click(function (e) {
+    $(this).siblings('.hide-height').addClass('show');
+  });
+
 
 });
 

@@ -48,7 +48,7 @@ block content
       //    source(srcset="./img/foto_sector3.webp" type="image/webp")
       //    img(src="./img/foto_sector3.jpg" alt="img")
 
-    .catalog-preview
+    .catalog-preview.catalog-preview--index-page
       .line-bg.b-lazy.webp-img(data-webp="./img/sev-bg.webp"
       data-img="./img/sev-bg.jpg")
       .catalog-preview__inner.site-container
@@ -65,7 +65,7 @@ block content
                   img(src="./img/koronki_adaptera.jpg" alt="img")
               .catalog-preview__item-inner
                 a(href="./catalog-detail.html").catalog-preview__name Коронки і адаптера
-                .catalog-preview__txt Короткое описание спецтехники
+                //.catalog-preview__txt Короткое описание спецтехники
           .catalog-preview__item.custom-col(data-aos="fade-up")
             .catalog-preview__item-content
               a(href="./catalog-detail.html").catalog-preview__img
@@ -74,7 +74,7 @@ block content
                   img(src="./img/specstal.jpg" alt="img")
               .catalog-preview__item-inner
                 a(href="./catalog-detail.html").catalog-preview__name Спецсталь
-                .catalog-preview__txt Короткое описание спецтехники
+                //.catalog-preview__txt Короткое описание спецтехники
           .catalog-preview__item.custom-col(data-aos="fade-up")
             .catalog-preview__item-content
               a(href="./catalog-detail.html").catalog-preview__img
@@ -83,7 +83,7 @@ block content
                   img(src="./img/kovshu.jpg" alt="img")
               .catalog-preview__item-inner
                 a(href="./catalog-detail.html").catalog-preview__name Ковші
-                .catalog-preview__txt Короткое описание спецтехники
+                //.catalog-preview__txt Короткое описание спецтехники
           .catalog-preview__item.custom-col(data-aos="fade-up")
             .catalog-preview__item-content
               a(href="./catalog-detail.html").catalog-preview__img
@@ -92,7 +92,26 @@ block content
                   img(src="./img/rem_rabotu.jpg" alt="img")
               .catalog-preview__item-inner
                 a(href="./catalog-detail.html").catalog-preview__name Ремонтні роботи
-                .catalog-preview__txt Короткое описание спецтехники
+                //.catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col(data-aos="fade-up")
+            //.catalog-preview__item-content(data-0="opacity: 0; transform: scale(0.8);" data-500="opacity: 1; transform: scale(1);")
+            .catalog-preview__item-content
+              a(href="./catalog-detail.html").catalog-preview__img
+                picture
+                  source(srcset="./img/koronki_adaptera.webp" type="image/webp")
+                  img(src="./img/koronki_adaptera.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="./catalog-detail.html").catalog-preview__name Коронки і адаптера
+                //.catalog-preview__txt Короткое описание спецтехники
+          .catalog-preview__item.custom-col(data-aos="fade-up")
+            .catalog-preview__item-content
+              a(href="./catalog-detail.html").catalog-preview__img
+                picture
+                  source(srcset="./img/specstal.webp" type="image/webp")
+                  img(src="./img/specstal.jpg" alt="img")
+              .catalog-preview__item-inner
+                a(href="./catalog-detail.html").catalog-preview__name Спецсталь
+                //.catalog-preview__txt Короткое описание спецтехники
 
     .why-we
       .why-we__inner.site-container

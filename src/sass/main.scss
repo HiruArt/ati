@@ -307,6 +307,7 @@ input{
 
       @include for-992{
         font-size: 16px;
+        background: rgba(255, 255, 255,.80);
       }
     }
   }
@@ -329,6 +330,7 @@ input{
 
       @include for-992{
         font-size: 16px;
+        background: rgba(255, 255, 255,.80);
       }
     }
   }
@@ -1046,7 +1048,9 @@ input{
   }
 
   &__item:hover &__item-link{
-    color: $orange;
+    @include from-1100 {
+      color: $orange;
+    }
 
     &:before{
       width: calc(100% - 30px);
@@ -1101,8 +1105,20 @@ input{
     }
   }
 
-  .parent.open  > &__item-arrow,
-  .parent:hover  > &__item-arrow{
+  @include from-1100 {
+    .parent:hover > &__item-arrow {
+
+      svg {
+        transform: rotate(-90deg);
+
+        path {
+          fill: $orange;
+        }
+      }
+    }
+  }
+
+  .parent.open  > &__item-arrow{
 
     svg {
       transform: rotate(-90deg);
@@ -1213,8 +1229,11 @@ input{
       min-height: 40px;
       align-items: center;
     }
-    &:hover{
-      color: $orange;
+
+    @include from-1100 {
+      &:hover {
+        color: $orange;
+      }
     }
   }
 
@@ -1354,7 +1373,7 @@ input{
     display: flex;
     //height: calc(100vh - 151px);
     //height: calc(100vh - 101px);
-    height: calc(45vh - 101px);
+    height: calc(63vh - 101px);
     //height: 500px;
 
     @include for-1600{
@@ -1362,7 +1381,7 @@ input{
     }
 
     @include for-992{
-      //height: 400px;
+      height: 350px;
     }
 
     @include for-550{
@@ -1382,17 +1401,17 @@ input{
     width: 100%;
     //height: 100%;
     //height: calc(100vh - 101px);
-    height: calc(45vh - 101px);
+    height: calc(63vh - 101px);
     //height: 500px;
 
     @include for-1600{
       //height: calc(100vh - 80px);
-      height: calc(45vh - 80px);
+      height: calc(63vh - 80px);
       //height: 500px;
     }
 
     @include for-992{
-      //display: none;
+      height: 350px;
     }
   }
 
@@ -1480,12 +1499,65 @@ input{
   //  }
   //}
 
+  @include from-1100 {
+
+    .slick-slider .slick-dots {
+      bottom: 50%;
+      transform: rotate(180deg) translateY(-50%);
+      left: 15px;
+      display: block;
+      width: fit-content;
+    }
+
+  }
 }
 
 .catalog-preview{
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
+
+  @include for-992{
+    padding-bottom: 10px;
+  }
+
+  &--index-page{
+    padding-top: 25px;
+    padding-bottom: 0;
+
+    &:after{
+      height: 100px !important;
+    }
+  }
+
+  @include from-1100{
+    &--index-page &__title {
+      //margin-bottom: 25px;
+      display: none;
+    }
+
+    &--index-page &__inner {
+      max-width: 100%;
+    }
+
+    &--index-page &__item {
+      margin-top: -100px;
+    }
+  }
+
+  @include from-1400 {
+
+    &--index-page &__item {
+      position: relative;
+      min-height: 200px;
+    }
+
+    &--index-page &__img{
+      flex: 0 0 240px;
+      height: 240px;
+    }
+
+  }
 
   &:after {
     position: absolute;
@@ -1499,6 +1571,10 @@ input{
     background-position: center;
     content: "";
     z-index: -1;
+
+    @include  for-1100{
+      display: none;
+    }
   }
 
   &__inner{
@@ -1513,15 +1589,24 @@ input{
 
   &__list{
 
+    @include from-992 {
+      justify-content: center;
+    }
   }
 
   &__item{
-    width: 33.33333%;
-    width: 25%;
+    //width: 33.33333%;
+    width: 20%;
+    width: 16.66666%;
     margin-bottom: 30px;
 
     @include for-1200{
+      width: 33.3333%;
+    }
+
+    @include for-992{
       width: 50%;
+      margin-bottom: 10px;
     }
 
     @include for-550{
@@ -1543,6 +1628,7 @@ input{
 
     @include for-992{
       position: relative;
+      border: 1px solid $orange;
     }
   }
 
@@ -1552,21 +1638,23 @@ input{
     position: relative;
     overflow: hidden;
     //height: 250px;
-    height: 190px;
+    height: 130px;
     width: calc(100% - 30px);
     margin: 0 auto;
     margin-top: 15px;
     //padding: 15px;
     //flex: 250px 0 0;
-    flex: 190px 0 0;
+    flex: 130px 0 0;
 
     @include for-992{
       position: absolute;
-      left: 0;
+      //left: 0;
+      right: 0;
       top: 0;
-      width: 100%;
+      //width: 100%;
+      width: 50%;
       height: 100%;
-      opacity: .2;
+      opacity: .6;
       padding: 0;
       margin: 0;
     }
@@ -1588,7 +1676,8 @@ input{
   }
 
   &__item-inner{
-    padding: 30px;
+    //padding: 30px;
+    padding: 0 15px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1597,23 +1686,30 @@ input{
     z-index: 2;
 
     @include for-992{
-      padding: 30px 15px 15px;
+      padding: 35px 15px 15px;
     }
   }
 
   &__name{
     width: 100%;
-    //margin-bottom: 18px;
-    margin-bottom: 10px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    //margin-bottom: 10px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    //font-size: 20px;
+    //font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
     transition: .3s all;
-    line-height: 30px;
+    //line-height: 30px;
+    line-height: 20px;
     position: relative;
-    padding-right: 40px;
+    //padding-right: 40px;
+    padding-right: 30px;
     min-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
 
     @include for-1200{
       margin-bottom: 0;
@@ -1663,7 +1759,7 @@ input{
   }
 
   &__txt{
-
+    margin-bottom: 15px;
   }
 }
 
@@ -2113,6 +2209,11 @@ input{
   padding-top: 50px;
   padding-bottom: 50px;
 
+  @include for-992{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &__inner{
 
   }
@@ -2258,6 +2359,11 @@ input{
   padding-bottom: 40px;
   position: relative;
 
+  @include for-992{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &:after {
     position: absolute;
     left: 0;
@@ -2267,6 +2373,10 @@ input{
     background-color: #d6dee6;
     content: "";
     z-index: -1;
+
+    @include  for-1100{
+      display: none;
+    }
   }
 
   &__inner{
@@ -2393,6 +2503,11 @@ input{
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
+
+  @include for-992{
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 
   &__left-bg{
     position: absolute;
@@ -2903,6 +3018,63 @@ input{
       border: 1px double $grey;
     }
   }
+
+  &__more{
+    @include from-992{
+      display: none;
+    }
+
+    cursor: pointer;
+    color: $orange;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+    padding: 20px 35px 20px 15px;
+    display: block;
+    width: fit-content;
+
+    &:after{
+      content: '';
+      background: url("../img/ico/arrow-ico-orange.svg") center/contain no-repeat;
+      width: 10px;
+      height: 7px;
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .hide-height{
+    @include for-992 {
+      overflow: hidden;
+      max-height: 300px;
+      transition: .15s all;
+
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+      }
+
+      &.show{
+        max-height: 10000px;
+
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .hide-height.show +  &__more{
+    display: none;
+  }
 }
 
 .block-info-txt{
@@ -2931,6 +3103,11 @@ input{
   &__inner{
     padding-top: 50px;
     padding-bottom: 50px;
+
+    @include for-992{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 
   &__content{
@@ -3364,6 +3541,11 @@ input{
 .list-product{
   padding-top: 50px;
   padding-bottom: 50px;
+
+  @include for-992{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   &__inner{
     padding: 0 15px;
@@ -3903,6 +4085,16 @@ label[for="file"]{
   align-items: center;
   transition: .3s all;
   cursor: pointer;
+
+  @include for-992{
+    border-width: 2px;
+    border-color: #ffab02;
+    border-style: solid;
+    background: rgba(255,255,255,.80);
+    border-radius: .3em;
+    padding: 0 30px;
+    height: 55px;
+  }
 
   &:hover{
     color: $orange;
